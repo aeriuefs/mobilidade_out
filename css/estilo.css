@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.parallax-container {
+    height: 250px
+}
+
+.uppercase {
+    text-transform: uppercase
+}
+
+.redes-footer ul li {
+    display: inline-flex;
+
+}
+
+.redes-footer ul li a {
+    border: solid 3px #212121;
+    padding: 5px;
+}
+
+.redes-footer ul li a:hover {
+    border-color: white;
+}
+
+.citacao-white:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #ffffff;
+    margin: 8px auto;
+}
+
+.citacao-red:after, .citacao-red:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #6982a1;
+    margin: 8px auto;
+}
+
+h5:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #6982a1;
+    margin: 10px 0;
+}
+
+h4:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #6982a1;
+    margin: 10px auto;
+}
+
+.da-content{
+    margin: 150px auto;
+}
+
+.espacamento {
+    height: 350px; 
+    width: 100%; 
+    background-color: white; 
+ 
+}
+
+.rodape{
+    background: #6982a1;
+}

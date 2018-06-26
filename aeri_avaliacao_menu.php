@@ -30,7 +30,7 @@ require_once('sessao_aeri.php');
             <section class="section container">
 
                 <h4 class="center-align uppercase">Avaliação</h4> 
-                
+
                 <strong class="uppercase">Processo de inscrição</strong>
 
                 <div class="row">
@@ -63,6 +63,19 @@ require_once('sessao_aeri.php');
 
                             <div class="card-action hoverable">
                                 <a href="aeri_avaliacao_candidaturas.php" class="white-text">Gerenciar Processos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 uppercase center-align">
+                        <div class="card blue-grey">
+                            <div class="card-image">
+                                <img src="img/home-processos.jpeg">
+                                <span class="card-title"><strong>Parametros de avaliação</strong></span>
+                            </div>
+
+                            <div class="card-action hoverable">
+                                <a href="aeri_avaliacao_parametros.php" class="white-text">Médias e posições</a>
                             </div>
                         </div>
                     </div>

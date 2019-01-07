@@ -27,7 +27,13 @@ require_once('sessao_aeri.php');
 
         <h4 class="center-align uppercase">Avaliação</h4>
 
+<<<<<<< HEAD
         <strong class="uppercase">Processo de inscrição</strong>
+=======
+                <h4 class="center-align uppercase">Avaliação</h4> 
+
+                <strong class="uppercase">Processo de inscrição</strong>
+>>>>>>> 905d3c8fb6cbc3aeac09c592b8929c15c36dac7b
 
         <div class="row">
 
@@ -52,12 +58,40 @@ require_once('sessao_aeri.php');
                 </div>
             </div>
 
+<<<<<<< HEAD
             <div class="col s12 m4 uppercase center-align">
                 <div class="card blue-grey">
                     <div class="card-image">
                         <img src="img/home-processos.jpeg">
                         <span class="card-title"><strong>Encaminhamento</strong></span>
                     </div>
+=======
+                    <div class="col s12 m4 uppercase center-align">
+                        <div class="card blue-grey">
+                            <div class="card-image">
+                                <img src="img/home-processos.jpeg">
+                                <span class="card-title"><strong>Parametros de avaliação</strong></span>
+                            </div>
+
+                            <div class="card-action hoverable">
+                                <a href="aeri_avaliacao_parametros.php" class="white-text">Médias e posições</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 uppercase center-align">
+                        <div class="card blue-grey">
+                            <div class="card-image">
+                                <img src="img/home-processos.jpeg">
+                                <span class="card-title"><strong>Designação</strong></span>
+                            </div>
+
+                            <div class="card-action hoverable">
+                                <a href="aeri_avaliacao_candidatos_aprovados_edital.php" class="white-text">Gerar resultado final</a>
+                            </div>
+                        </div>
+                    </div> 
+>>>>>>> 905d3c8fb6cbc3aeac09c592b8929c15c36dac7b
 
                     <div class="card-action hoverable">
                         <a href="aeri_avaliacao_candidatos_aprovados_edital.php" class="white-text">Definir IES

@@ -73,6 +73,23 @@ require_once('funcoes_uteis.php');
 
             </div>
 
+            <div class="row">
+
+                <div class="col s12 m4 uppercase center-align">
+                    <div class="card blue-grey">
+                        <div class="card-image">
+                            <img src="img/home-editais.png">
+                            <span class="card-title"><strong>Notas dos cursos</strong></span>
+                        </div>
+
+                        <div class="card-action hoverable">
+                            <a href="aeri_comissao_selec_edital_notas.php" class="white-text">Notas de cada curso</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
         </section>
 
     </main>

@@ -51,6 +51,7 @@ require_once('funcoes_uteis.php');
                             <th>Número</th>
                             <th>Vagas</th>
                             <th>Data limite</th>
+                            <th>Dowloads</th>
                             <th>Ação</th>
                         </tr>
                     </thead>
@@ -63,8 +64,13 @@ require_once('funcoes_uteis.php');
                                 echo('<td>' . $res['numero_edital'] . '</td>');
                                 echo('<td>' . $res['numero_vagas'] . '</td>');
                                 echo('<td>' . date('d/m/Y', strtotime($res['fim_inscricao'])) . '</td>');
+                                echo('<td><form style="display: inline;" method="post" action="aeri_arquivos_edital.php" > 
+                <input type="hidden" name="edital" value="' . $res['numero_edital'] . '"/>                 
+                <button class="btn waves-effect waves-light orange darken-4 " type="submit" formtarget="_blank" name="excluir_edital"> Edital</button> 
+            </form></td>');
                                 echo('<td><form style="display: inline;" method="post" action="candidato_inscricao_ficha_' . $res['codigo'] . '.php" > <input type="hidden" name="edital" value="' . $res['numero_edital'] . '"/>
-                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light blue-grey " type="submit" name="inscrever"> Inscrever </button> </form></td></tr>');
+                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light blue-grey " type="submit" name="inscrever"> Inscrever </button> </form>'
+                                . '</td></tr>');
                             }
                         }
                         ?>

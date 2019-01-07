@@ -30,18 +30,13 @@ $edital = $_POST['edital'];
 
     <main>
 
-        <?php
-        include("parallax.php");
-        ?>
-
         <section class="section container">
 
             <h4 class="center-align uppercase">Conceitos dos candidatos</h4> 
 
-            <p>Abaixo é exibo os conceitos obtidos pelos candidatos nas provas de proficiência. S/C indica que o aluno ainda não foi avaliado.</p>
-
-           
-
+            <p>Abaixo é exibo os conceitos obtidos pelos candidatos nas provas de proficiência. S/C indica que o aluno ainda não foi avaliado. DP indica que o
+            aluno foi dispensado.</p>
+          
             <table class="striped">
                 <thead>
                     <tr>
@@ -66,6 +61,7 @@ $edital = $_POST['edital'];
                         echo('<td>' . $res['conceito'] . '</td>');
                         echo('<td><form style="display: inline;" method="post" action="aeri_proficiencia_alterar_conceito.php" > <input type="hidden" name="edital" value="' . $res['edital'] . '"/>
                             <input type="hidden" name="matricula" value="' . $res['matricula'] . '"/>
+                                <input type="hidden" name="nome" value="' . $res['nome'] . '"/>
                                 <input type="hidden" name="prova" value="' . $res['prova'] . '"/>
                          <button class="btn waves-effect waves-light blue-grey " type="submit" name="alterar"> Alterar conceito</button> </form></td></tr>');
                     }

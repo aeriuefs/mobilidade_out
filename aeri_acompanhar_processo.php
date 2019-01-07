@@ -39,8 +39,9 @@ $matricula = $_POST['matricula'];
 
             <h4 class="center-align uppercase">Acompanhar processo de candidatura</h4>
 
-            <br>
-            <p>Você pode acompanhar os passos do processo de candidatura na linha do tempo abaixo.</p>
+            <p>Você pode acompanhar os passos do processo de candidatura nos cartões abaixo. Os cartões estão organizados de forma cronológica. Desta forma, o cartão que está no topo apresenta a situação atual do aluno.</p>
+            <b class="blue-grey-text">Histórico</b>
+            <br><br>
             
             <?php
             $query = "SELECT * FROM historico_candidatos WHERE matricula='" . $matricula . "' AND edital='" . $edital . "'";
@@ -52,7 +53,7 @@ $matricula = $_POST['matricula'];
                     <div class="row">
                     <div class="col s12 m6">
 
-                        <div class="card blue-grey darken-1">
+                        <div class="card  indigo darken-1">
                             <div class="card-content white-text">
                                 <span class="card-title">' . $res['titulo'] . '</span>
                                     <span class="new badge blue" data-badge-caption="">' . $res['data'] . '</span>
@@ -64,43 +65,42 @@ $matricula = $_POST['matricula'];
                 </div>      
                 <div class="row">
                     <div class="col s12 m6">
-                        <img class="responsive-img" src="img/icones/direcao.png" width="70" height="70" alt="direcao"/>
+                        
                     </div>
                 </div>');
             }
             ?>
-
-            <br>
-            <br>
-            <hr>
-            <br>
             
-            <b>Adicionar novo evento</b>
+            <b class="blue-grey-text">Adicionar novo evento</b>
 
             <br>
             <br>
 
-            <form class="col s12" action="">
+            <form class="col s12" action="bd_aeri_add_evento_candidatura.php" method="post">
 
+                <input type="hidden" name="edital" value="<?php echo ($edital) ?>"/>   
+                <input type="hidden" name="matricula" value="<?php echo ($matricula) ?>"/> 
+                
                 <div class="row">
 
                     <div class="input-field col l12 m12 s12">
-                        <select name="curso">
+                        <select name="codigo">
                             <option value="" disabled selected>Selecione o evento</option>
                             <option value="1">Inscrição em Análise</option>
-                            <option value="2">Inscrição não Homologada</option>
-                            <option value="3">Inscrição homologada (Recurso)</option>
-                            <option value="3">Inscrição não homologada (Recurso)</option>
-                            <option value="3">Candidato aprovado proficiência</option>
-                            <option value="3">Candidato reprovado proficiência</option>
-                            <option value="3">Candidato aprovado proficiência (Recurso)</option>
-                            <option value="3">Candidato reprovado proficiência (Recurso)</option>
-                            <option value="3">Candidato aprovado CCint</option>
-                            <option value="3">Candidato reprovado CCint</option>
-                            <option value="3">Candidato aprovado CCint (Recurso)</option>
-                            <option value="3">Candidato reprovado CCint (Recurso)</option>
-                            <option value="3">Inscrição aprovada em Intercâmbio</option>
-                            <option value="3">Inscrição reprovada em Intercâmbio</option>
+                            <option value="2">Inscrição Homologada</option>
+                            <option value="3">Inscrição não Homologada</option>
+                            <option value="4">Inscrição homologada (Recurso)</option>
+                            <option value="5">Inscrição não homologada (Recurso)</option>
+                            <option value="6">Candidato aprovado proficiência</option>
+                            <option value="7">Candidato reprovado proficiência</option>
+                            <option value="8">Candidato aprovado proficiência (Recurso)</option>
+                            <option value="9">Candidato reprovado proficiência (Recurso)</option>
+                            <option value="10">Candidato aprovado CCint</option>
+                            <option value="11">Candidato reprovado CCint</option>
+                            <option value="12">Candidato aprovado CCint (Recurso)</option>
+                            <option value="13">Candidato reprovado CCint (Recurso)</option>
+                            <option value="14">Inscrição aprovada em Intercâmbio</option>
+                            <option value="15">Inscrição reprovada em Intercâmbio</option>
                         </select>
                         <label>Evento</label>
                     </div>
@@ -110,7 +110,7 @@ $matricula = $_POST['matricula'];
                 <div class="row">
 
                     <div class="input-field col l12 m12 s12">
-                        <input type="text" id="informacao" class="materialize-textarea"></textarea>
+                        <input type="text" id="informacao" name="informacao" class="materialize-textarea"></textarea>
                         <label for="informacao">Adicionar informação</label>
                     </div>
 

@@ -4,6 +4,38 @@ require_once('funcoes_uteis.php');
 
 $edital = $_POST['edital'];
 $status = $_POST['status'];
+
+if ($status == 1) {
+    $titulo = "Inscricao em Analise";
+} else if ($status == 2) {
+    $titulo = "Inscricao Homologada";
+} else if ($status == 3) {
+    $titulo = "Inscricao nao Homologada";
+} else if ($status == 4) {
+    $titulo = "Inscricao homologada (Recurso)";
+} else if ($status == 5) {
+    $titulo = "Inscricao nao homologada (Recurso)";
+} else if ($status == 6) {
+    $titulo = "Candidato aprovado proficiencia";
+} else if ($status == 7) {
+    $titulo = "Candidato reprovado proficiencia";
+} else if ($status == 8) {
+    $titulo = "Candidato aprovado proficiencia (Recurso)";
+} else if ($status == 9) {
+    $titulo = "Candidato reprovado proficiencia (Recurso)";
+} else if ($status == 10) {
+    $titulo = "Candidato aprovado CCint";
+} else if ($status == 11) {
+    $titulo = "Candidato reprovado CCint";
+} else if ($status == 12) {
+    $titulo = "Candidato aprovado CCint (Recurso)";
+} else if ($status == 13) {
+    $titulo = "Candidato reprovado CCint (Recurso)";
+} else if ($status == 14) {
+    $titulo = "Inscricao aprovada em Intercambio";
+} else if ($status == 15) {
+    $titulo = "Inscricao reprovada em Intercambio";
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,20 +63,23 @@ $status = $_POST['status'];
 
             <section class="section container">
 
-                <h4 class="center-align uppercase">Status: <?php echo ($status); ?> — Edital <?php echo ($edital); ?></h4> 
+                <h4 class="center-align uppercase">Status: <?php echo ($titulo); ?> — Edital <?php echo ($edital); ?></h4> 
 
                 <b>Candidatos</b>
                 <br>
 
-                <form method="post" action="">
+                <form method="post" action="bd_aeri_avaliacao_por_status.php">
+
+                    <input type="hidden" name="edital" value="<?php echo ($edital); ?>"/>    
 
                     <?php
                     $query = "SELECT * FROM candidaturas WHERE edital = '" . $edital . "' AND situacao_atual = '" . $status . "'";
                     $resultado = conecta_seleciona($query);
                     $i = 0;
+
                     while ($res = mysqli_fetch_assoc($resultado)) {
 
-                        echo('<p><input type="checkbox" name="ckb[]" id="' . $i . '" value="' . $res['matricula'] . '" /> <label for="' . $i . '">' . $res['nome'] . ' — Matrícula: ' . $res['matricula'] . '</p> </label></p>');
+                        echo('<p><input type="checkbox" name="selecionados[]" id="' . $i . '" value="' . $res['matricula'] . '" /> <label for="' . $i . '">' . $res['nome'] . ' — Matrícula: ' . $res['matricula'] . '</p> </label></p>');
 
                         $i++;
                     }
@@ -56,7 +91,7 @@ $status = $_POST['status'];
 
                     <div class="input-field col l6 m6 s12">
 
-                        <SELECT NAME = "curso" SIZE=1>
+                        <SELECT NAME = "novo_status" SIZE=1>
                             <option value="" disabled selected>Selecione o novo status</option>
                             <?php
                             $query = "SELECT * FROM status_inscricao";
@@ -74,7 +109,7 @@ $status = $_POST['status'];
                     <div class="row">
 
                         <div class="input-field col l12 m12 s12">
-                            <input type="text" id="informacao" class="materialize-textarea"></textarea>
+                            <input type="text" id="informacao" name="informacao" class="materialize-textarea"></textarea>
                             <label for="informacao">Adicionar informação</label>
                         </div>
 

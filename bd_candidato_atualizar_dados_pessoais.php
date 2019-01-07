@@ -17,12 +17,12 @@ $orgao_expedidor = $_POST['orgao_expedidor'];
 $sexo = $_POST['sexo'];
 $data_nascimento = $_POST['data_nascimento'];
 $telefone = isset($_POST["telefone"]) ? $_POST["telefone"] : "NULL";
-$passaporte = isset($_POST["passaporte"]) ? $_POST["passaporte"] : "NULL";
+$celular = isset($_POST["celular"]) ? $_POST["celular"] : "NULL";
 $forma_ingresso = isset($_POST["forma_ingresso"]) ? $_POST["forma_ingresso"] : "0";
 $aluno_residente = isset($_POST["aluno_residente"]) ? $_POST["aluno_residente"] : "0";
 $curso = $_POST["curso"];
 
-$query = "UPDATE candidatos SET nome='$nome', email='$email', cpf='$cpf', rg='$rg', orgao_expedidor='$orgao_expedidor', sexo='$sexo', data_nascimento='$data_nascimento', telefone='$telefone', passaporte='$passaporte', forma_ingresso='$forma_ingresso', aluno_residente='$aluno_residente', curso='$curso'  WHERE matricula='" . $_SESSION['matricula'] . "'";
+$query = "UPDATE candidatos SET nome='$nome', email='$email', cpf='$cpf', rg='$rg', orgao_expedidor='$orgao_expedidor', sexo='$sexo', data_nascimento='$data_nascimento', telefone='$telefone', celular='$celular', forma_ingresso='$forma_ingresso', aluno_residente='$aluno_residente', curso='$curso'  WHERE matricula='" . $_SESSION['matricula'] . "'";
 
 conecta_insere($query);
 echo "<script>alert('Seus dados foram atualizados com sucesso!');</script>";

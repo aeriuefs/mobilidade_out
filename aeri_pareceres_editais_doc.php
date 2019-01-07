@@ -62,7 +62,7 @@ require_once('funcoes_uteis.php');
                         echo('<td>' . $res['numero_edital'] . '</td>');
                         echo('<td>' . $res['numero_vagas'] . '</td>');
                         echo('<td>' . date('d/m/Y', strtotime($res['fim_inscricao'])) . '</td>');
-                        echo('<td><form style="display: inline;" method="post" action="aeri_pareceres_enviar" > '
+                        echo('<td><form style="display: inline;" method="post" action="aeri_pareceres_enviar.php" > '
                                 . '<input type="hidden" name="edital" value="' . $res['numero_edital'] . '"/>
                          <button class="btn waves-effect waves-light blue-grey " type="submit" name="selecionar"> Selecionar </button> </form></td></tr>');
                     }

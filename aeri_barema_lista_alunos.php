@@ -38,8 +38,8 @@
 
                     <tbody>
                         <tr>
-                            <td>Maria Alice</td>
-                            <td>2018/01</td>
+                            <td>Júlio César Andrade Silva/td>
+                            <td>07/2018</td>
                             <td><a class="waves-effect waves-light btn modal-trigger" href="aeri_barema.php">Avaliação</a></td>
                         </tr>
                         <tr>

@@ -8,6 +8,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
 
 require_once('funcoes_uteis.php');
 
+$edital = $_POST['edital'];
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +37,38 @@ require_once('funcoes_uteis.php');
         <section class="section container">
 
             <h4 class="center-align uppercase">Recursos</h4> 
+
+            <table class="bordered">
+                <thead>
+                    <tr>
+                        <th>Edital</th>
+                        <th>Matrícula</th>                  
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <?php
+                    $query = "SELECT * FROM candidato_recursos WHERE edital='" . $edital . "'";
+                    $resultado = conecta_seleciona($query);
+
+                    while ($res = mysqli_fetch_assoc($resultado)) {
+
+                        echo('<tr><td>' . $res['edital'] . '</td>');
+
+                        echo('<td>' . $res['matricula'] . '</td>');
+
+                        echo('<td><form style="display: inline;" method="post" action="aeri_recurso_avaliacao.php" > <input type="hidden" name="id" value="' . $res['id'] . '"/>
+                            
+                         <button class="btn waves-effect waves-light blue-grey " type="submit" name="detalhes"> Detalhes </button> </form>
+                         
+                        </td></tr>');
+                    }
+                    ?>
+
+                </tbody>
+            </table>
 
 
         </section>

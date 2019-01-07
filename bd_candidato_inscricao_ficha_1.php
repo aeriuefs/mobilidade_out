@@ -9,6 +9,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
 }
 
 require_once('funcoes_uteis.php');
+require_once('funcoes_de_arquivos.php');
 
 $edital = $_POST['edital'];
 
@@ -55,7 +56,47 @@ $query7 = "INSERT INTO historico_candidatos(matricula, edital, data) VALUES ('" 
 
 conecta_insere($query7);
 
-echo "<script>alert('Sua candidatura foi realizada com sucesso!');</script>";
+//echo "<script>alert('Sua candidatura foi realizada com sucesso!');</script>";
+
+$caminho_edital = str_replace('/', '-', $edital);
+$caminho1 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/';
+$caminho2 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/arquivos_inscricao/';
+criar_diretorio($caminho1);
+criar_diretorio($caminho2);
+
+$destino = $caminho2 . 'plano_trabalho_opcao_1.pdf';
+upload_arquivo($_FILES['plano_trabalho_opcao_1']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'plano_estudo_opcao_1.pdf';
+upload_arquivo($_FILES['plano_estudo_opcao_1']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'plano_trabalho_opcao_2.pdf';
+upload_arquivo($_FILES['plano_trabalho_opcao_2']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'plano_estudo_opcao_2.pdf';
+upload_arquivo($_FILES['plano_estudo_opcao_2']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'plano_trabalho_opcao_3.pdf';
+upload_arquivo($_FILES['plano_trabalho_opcao_3']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'plano_estudo_opcao_3.pdf';
+upload_arquivo($_FILES['plano_estudo_opcao_3']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'curriculo_lattes.pdf';
+upload_arquivo($_FILES['curriculo_lattes']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'guia_matricula.pdf';
+upload_arquivo($_FILES['guia_matricula']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'historico.pdf';
+upload_arquivo($_FILES['historico']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'porcentagem.pdf';
+upload_arquivo($_FILES['porcentagem']['tmp_name'], $destino);
+
+$destino = $caminho2 . 'foto.pdf';
+upload_arquivo($_FILES['foto']['tmp_name'], $destino);
+
 
 header("refresh: 0; url=candidato_inscricoes.php");
 ?>

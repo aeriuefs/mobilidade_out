@@ -7,7 +7,7 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down uppercase">
                 <li><a href="http://aeri.uefs.br/">Portal AERI</a></li>
                 <li><a href="http://aeri.uefs.br/contato.php#conteudo" >Contato</a></li>
-                <li><a href="aeri_login_administrativo.php">Login administrativo</a></li>
+                <li><a href="login_administrativo.php">Login administrativo</a></li>
 
             </ul>
 

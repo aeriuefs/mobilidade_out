@@ -45,7 +45,7 @@ $edital = $_POST['edital'];
 
                 <tbody>
                     <?php
-                    $query = "SELECT * FROM candidaturas WHERE edital='" . $edital . "' AND situacao_atual='10' OR situacao_atual='11'";
+                    $query = "SELECT * FROM candidaturas WHERE edital='" . $edital . "' AND designado=4";
                     $resultado = conecta_seleciona($query);
 
                     while ($res = mysqli_fetch_assoc($resultado)) {

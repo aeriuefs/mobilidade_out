@@ -41,6 +41,40 @@ $edital = $_POST['edital'];
             <p>Abaixo são listadas as respostas recebidas pelos colegiados.</p>
             <br>
 
+            
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Matrícula</th>
+                        <th>Resposta do colegiado</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php
+                    $query = "SELECT * FROM candidaturas A INNER JOIN status_inscricao B ON A.situacao_atual = B.id WHERE edital='" . $edital . "'";
+                    $resultado = conecta_seleciona($query);
+
+                    while ($res = mysqli_fetch_assoc($resultado)) {
+
+                        echo('<tr><td>' . $res['nome'] . '</td>');
+                        echo('<td>' . $res['matricula'] . '</td>');
+                        echo('<td>' . 'Pendente' . '</td>');
+                        echo('<td><form style="display: inline;" method="post" action="aeri_detalhes_candidatura.php" > '
+                        . '<input type="hidden" name="edital" value="' . $res['edital'] . '"/>'
+                        . '<input type="hidden" name="matricula" value="' . $res['matricula'] . '"/>
+                         <button class="btn waves-effect waves-light blue-grey " type="submit" name="detalhes"> Documentos </button> </form>
+<form style="display: inline;" method="post" action="aeri_acompanhar_processo.php" > '
+                        . '<input type="hidden" name="edital" value="' . $res['edital'] . '"/>'
+                        . '<input type="hidden" name="matricula" value="' . $res['matricula'] . '"/>
+                         <button class="btn waves-effect waves-light blue-grey " type="submit" name="processo"> Histórico </button> </form>                         
+</td></tr>');
+                    }
+                    ?>
+                </tbody>
+            </table>
 
         </section>
 

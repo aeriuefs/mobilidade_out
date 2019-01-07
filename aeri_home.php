@@ -91,11 +91,11 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         <div class="card blue-grey">
                             <div class="card-image">
                                 <img src="img/home-comissao.png">
-                                <span class="card-title"><strong>Comissão</strong></span>
+                                <span class="card-title"><strong>Avaliações</strong></span>
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="aeri_comissao.php" class="white-text">Comissão avaliadora</a>
+                                <a href="aeri_comissao.php" class="white-text">Recursos, notas e mais</a>
                             </div>
                         </div>
                     </div>
@@ -125,6 +125,23 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                             </div>
                         </div>
                     </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col s12 m4 uppercase center-align">
+                        <div class="card blue-grey">
+                            <div class="card-image">
+                                <img src="img/home-recursos.jpg">
+                                <span class="card-title"><strong>Relatórios</strong></span>
+                            </div>
+
+                            <div class="card-action hoverable">
+                                <a href="aeri_sistema_arquivos.php" class="white-text">Gerar relatórios</a>
+                            </div>
+                        </div>
+                    </div> 
 
                 </div>
 

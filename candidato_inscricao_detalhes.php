@@ -69,12 +69,6 @@ $edital = $_POST['edital'];
 
                 <b> Dados Bancários </b> 
 
-                <?php
-                $query = "SELECT * FROM candidato_dados_bancarios WHERE matricula='" . $_SESSION['matricula'] . "'";
-                $resultado = conecta_seleciona($query);
-                $res = mysqli_fetch_assoc($resultado);
-                ?>
-
                 <p>Banco: <span style="color: #737373"> <?php echo($res['banco']); ?></span></p>
 
                 <p>Agência: <span style="color: #737373"> <?php echo($res['agencia']); ?> </span></p>
@@ -97,8 +91,9 @@ $edital = $_POST['edital'];
                 }
                 ?>
 
+                <br><br>
 
-                <b>Arquivos anexados</b> 
+                <b>Arquivos anexados em sua inscrição</b> 
 
                 <table class="striped">
                     <thead>
@@ -111,14 +106,22 @@ $edital = $_POST['edital'];
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td> <img src="img/icones/pdf.png"  width="30" height="30" /></td>
-                            <td>Arquivo teste</td>
-                            <td>
-                                <form style="display: inline;" method="post" action="candidato_inscricao_historico.php" > <input type="hidden" name="edital" value=""/>
-                                    <input type="hidden" name="matricula" value=""/> <button class="btn waves-effect waves-light blue-grey " type="submit" name="acompanhar"> Download</button> </form>
-                            </td>
-                        </tr>
+                        <?php
+                        $caminho_edital = str_replace('/', '-', $edital);
+                        $caminho = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/arquivos_inscricao/';
+                        $diretorio = dir($caminho);
+                        while (($arquivo_1 = $diretorio->read()) !== false) {
+
+                            if (strrchr($arquivo_1, '.') == '.pdf') {
+
+                                echo '<tr><td> <img src = "img/icones/pdf.png" width = "30" height = "30" /></td>
+                            <td>' . $arquivo_1 . '</td>
+                            <td> <a href=' . $caminho . $arquivo_1 . ' download="' . $arquivo_1 . '">' . 'Download' . '</a></td></tr>';
+                            }
+                        }
+
+                        $diretorio->close();
+                        ?>
                     </tbody>
                 </table>
 

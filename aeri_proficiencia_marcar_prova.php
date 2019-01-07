@@ -26,16 +26,14 @@ $edital = $_POST['edital'];
 
         <main>
 
-            <?php
-            include("parallax.php");
-            ?>
-
             <section class="section container">
                 <h4 class="center-align uppercase">Marcar novas provas</h4>
 
                 <div class="row">
 
-                    <form class="col s12" action="">
+                    <form class="col s12" action="bd_aeri_proficiencia_marcar_prova.php" method="post">
+
+                        <input type="hidden" name="edital" value="<?php echo ($edital); ?>"/>  
 
                         <b>Informações da prova de inglês</b>
 
@@ -96,28 +94,40 @@ $edital = $_POST['edital'];
 
                             <div class="input-field col l5 m6 s12">
 
-                                <input type="date" name="data_frances" id="data_frances">
+                                <input type="date" name="data_frances" id="data_frances"> 
 
                             </div>
 
                         </div>
 
-
-
                         <b>Candidatos Homologados</b>
 
                         <?php
-                        $query = "SELECT * FROM candidaturas WHERE edital = '" . $edital . "'";
+                        $query = "SELECT * FROM candidaturas WHERE edital = '" . $edital . "' AND situacao_atual > 1 AND situacao_atual != 3";
                         $resultado = conecta_seleciona($query);
                         $i = 0;
                         while ($res = mysqli_fetch_assoc($resultado)) {
+                            
+                            echo ('<p><b>Nome: </b>' . $res['nome'] . ' | <b>Matrícula: </b>' . $res['matricula'] );
 
-                            echo ('<p>Nome: ' . $res['nome'] . ' | Matrícula: ' . $res['matricula'] . '  <br>Provas que devem ser feitas: </p>');
-                            echo('<p><input type="checkbox" name="ingles[]" id="' . $i . '" value="' . $res['matricula'] . '" /> <label for="' . $i . '"> Inglês </label></p>');
+                            $query2 = "SELECT * FROM candidato_opcao_universidade WHERE matricula='" . $res['matricula'] . "' AND edital='" . $edital . "'";
+                            $resultado2 = conecta_seleciona($query2);
+
+                            $i = 1;
+                            while ($lista = mysqli_fetch_assoc($resultado2)) {
+
+                                echo ('<br><b>' . $i . 'ª opção de universidade: </b>');
+                                echo('<span style="color: orange"> ' . $lista['nome'] . ' </span>');
+                                echo('<b>Local:</b> <span style="color: orange"> ' . $lista['local'] . ' </span>');
+                                $i++;
+                            }
+                            
+                            echo ('<br>Provas que devem ser feitas: </p>');
+                            echo('<input type="checkbox" name="ingles[]" id="' . $i . '" value="' . $res['matricula'] . '" /> <label for="' . $i . '"> Inglês &nbsp&nbsp</label>');
                             $i++;
-                            echo('<p><input type="checkbox" name="espanhol[]" id="' . $i . '" value="' . $res['matricula'] . '" /> <label for="' . $i . '"> Espanhol </label></p>');
+                            echo('<input type="checkbox" name="espanhol[]" id="' . $i . '" value="' . $res['matricula'] . '" /> <label for="' . $i . '"> Espanhol &nbsp&nbsp</label>');
                             $i++;
-                            echo('<p><input type="checkbox" name="frances[]" id="' . $i . '" value="' . $res['matricula'] . '" /> <label for="' . $i . '"> Francês </label></p><hr>');
+                            echo('<input type="checkbox" name="frances[]" id="' . $i . '" value="' . $res['matricula'] . '" /> <label for="' . $i . '"> Francês &nbsp&nbsp</label><hr>');
                             $i++;
                         }
                         ?>

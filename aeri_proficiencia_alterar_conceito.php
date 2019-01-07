@@ -11,6 +11,7 @@ require_once('funcoes_uteis.php');
 $edital = $_POST['edital'];
 $matricula = $_POST['matricula'];
 $prova = $_POST['prova'];
+$nome = $_POST['nome'];
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +33,6 @@ $prova = $_POST['prova'];
 
     <main>
 
-        <?php
-        include("parallax.php");
-        ?>
-
         <section class="section container">
 
             <h4 class="center-align uppercase">Alterar conceito</h4> 
@@ -44,7 +41,8 @@ $prova = $_POST['prova'];
 
                 <p>Edital: <?php echo($edital) ?> </p>
                 <p>Matrícula: <?php echo($matricula) ?>  </p>
-                <p>Idioma: <?php echo($prova) ?> </p>
+                <p>Nome: <?php echo($nome) ?>  </p>
+                <p>Idioma da prova: <?php echo($prova) ?> </p>
 
                 <div class="row">
 

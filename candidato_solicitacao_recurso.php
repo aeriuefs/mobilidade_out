@@ -17,44 +17,43 @@ $resultado = conecta_seleciona($query);
 if (mysqli_num_rows($resultado) != 0) {
 
     $res = mysqli_fetch_assoc($resultado);
-    
+
     //Depois pegar do banco de dados os itens que cabe recurso
     $array = array('2', '6', '10');
 
     if (!in_array($res['situacao_atual'], $array)) {
         echo "<script>alert('Você não tem direito ou não necessita pedir este recurso!');</script>";
 
-        header("refresh: 0; url=candidato_recursos.php");
+       header("refresh: 0; url=candidato_home.php");
     }
-    
 } else {
 
     echo "<script>alert('Você não tem direito ou não necessita pedir este recurso!');</script>";
 
-    header('Location: url=candidato_recursos.php'); 
+    header("refresh: 0; url=candidato_home.php");
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<?php
-include("topo_pagina.php");
-?>
+    <?php
+    include("topo_pagina.php");
+    ?>
 
     <body>
 
         <header>
-<?php
-include("navbar_candidato.php");
-?>
+            <?php
+            include("navbar_candidato.php");
+            ?>
         </header>
 
         <main>
 
-<?php
-include("parallax.php");
-?>
+            <?php
+            include("parallax.php");
+            ?>
 
             <section class="section container">
 
@@ -65,7 +64,7 @@ include("parallax.php");
 
                         <input type="hidden" name="edital" value="<?php echo($edital); ?>"/>
 
-                        <p>Informações importantes: bla bla bla</p>
+                        <p></p>
 
                         <b>Informações sobre o recurso</b>
 
@@ -120,9 +119,9 @@ include("parallax.php");
         <!--END MAIN-->
 
 
-<?php
-include("rodape_pagina.php");
-?>
+        <?php
+        include("rodape_pagina.php");
+        ?>
 
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>

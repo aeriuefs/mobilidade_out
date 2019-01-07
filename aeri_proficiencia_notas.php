@@ -29,10 +29,6 @@ require_once('funcoes_uteis.php');
 
     <main>
 
-        <?php
-        include("parallax.php");
-        ?>
-
         <section class="section container">
 
             <h4 class="center-align uppercase">Editais </h4>
@@ -45,7 +41,6 @@ require_once('funcoes_uteis.php');
                         <th>Tipo</th>
                         <th>Número</th>
                         <th>Vagas</th>
-                        <th>Data limite</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -61,7 +56,6 @@ require_once('funcoes_uteis.php');
                         echo('<tr><td>' . $res['tipo_intercambio'] . '</td>');
                         echo('<td>' . $res['numero_edital'] . '</td>');
                         echo('<td>' . $res['numero_vagas'] . '</td>');
-                        echo('<td>' . date('d/m/Y', strtotime($res['fim_inscricao'])) . '</td>');
                         echo('<td><form style="display: inline;" method="post" action="aeri_proficiencia_notas_edital.php" > <input type="hidden" name="edital" value="' . $res['numero_edital'] . '"/>
                          <button class="btn waves-effect waves-light blue-grey " type="submit" name="selecionar"> Selecionar </button> </form></td></tr>');
                     }

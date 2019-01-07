@@ -10,7 +10,6 @@ require_once('funcoes_uteis.php');
 
 $edital = $_POST['edital'];
 $matricula = $_POST['matricula'];
-
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +30,6 @@ $matricula = $_POST['matricula'];
     </header>
 
     <main>
-
-        <?php
-        include("parallax.php");
-        ?>
-
         <section class="section container">
             <h4 class="center-align uppercase">Detalhes da Candidatura</h4>
 
@@ -71,12 +65,6 @@ $matricula = $_POST['matricula'];
 
             <b> Dados Bancários </b> 
 
-            <?php
-            $query = "SELECT * FROM candidato_dados_bancarios WHERE matricula='" . $matricula . "'";
-            $resultado = conecta_seleciona($query);
-            $res = mysqli_fetch_assoc($resultado);
-            ?>
-
             <p>Banco: <span style="color: #737373"> <?php echo($res['banco']); ?></span></p>
 
             <p>Agência: <span style="color: #737373"> <?php echo($res['agencia']); ?> </span></p>
@@ -99,9 +87,21 @@ $matricula = $_POST['matricula'];
             }
             ?>
 
-           
+            <hr>
+            <br>
+
+            <form style="display: inline;" method="post" action="aeri_acompanhar_processo.php" > 
+                <input type="hidden" name="edital" value="<?php echo ($edital) ?>"/>   
+                <input type="hidden" name="matricula" value="<?php echo ($matricula) ?>"/>  
+                <button class="btn waves-effect waves-light orange darken-4 " type="submit" name="historico"> 
+                    Histórico da candidatura </button> 
+            </form>
+
+            <br><br>
+            <hr>
+            <br>
             <b>Arquivos anexados</b> 
-            
+
             <table class="striped">
                 <thead>
                     <tr>
@@ -113,14 +113,22 @@ $matricula = $_POST['matricula'];
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td> <img src="img/icones/pdf.png"  width="30" height="30" /></td>
-                        <td>Arquivo teste</td>
-                        <td>
-                            <form style="display: inline;" method="post" action="candidato_inscricao_historico.php" > <input type="hidden" name="edital" value=""/>
-                                <input type="hidden" name="matricula" value=""/> <button class="btn waves-effect waves-light blue-grey " type="submit" name="acompanhar"> Download</button> </form>
-                        </td>
-                    </tr>
+                    <?php
+                    $caminho_edital = str_replace('/', '-', $edital);
+                    $caminho = 'arquivos/editais/' . $caminho_edital . '/candidatos/' . $matricula . '/arquivos_inscricao/';
+                    $diretorio = dir($caminho);
+                    while (($arquivo_1 = $diretorio->read()) !== false) {
+
+                        if (strrchr($arquivo_1, '.') == '.pdf') {
+
+                            echo '<tr><td> <img src = "img/icones/pdf.png" width = "30" height = "30" /></td>
+                            <td>' . $arquivo_1 . '</td>
+                            <td> <a href=' . $caminho . $arquivo_1 . ' download="' . $arquivo_1 . '">' . 'Download' . '</a></td></tr>';
+                        }
+                    }
+
+                    $diretorio->close();
+                    ?>
                 </tbody>
             </table>
 
@@ -139,5 +147,6 @@ $matricula = $_POST['matricula'];
     <script type="text/javascript" src="js/script.js"></script>
 
     <script> $(".button-collapse").sideNav();</script>
+
 </body>
 </html>

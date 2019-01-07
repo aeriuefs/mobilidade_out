@@ -7,7 +7,6 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
 }
 
 require_once('funcoes_uteis.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,7 +36,7 @@ require_once('funcoes_uteis.php');
 
             <div class="row">
 
-                <form class="col s12" action="">
+                <form class="col s12" action="bd_aeri_novo_colaborador.php" method="post">
 
                     <b>Informações do novo colaborador</b>
 
@@ -50,20 +49,9 @@ require_once('funcoes_uteis.php');
 
                         <div class="input-field col l6 m6 s12">
 
-                            <SELECT NAME = "tipos" SIZE=1>
-                                <option value="" disabled selected>Selecione o tipo</option>
-                                <?php
-                                $query = "SELECT * FROM perfis_usuario";
-                                $resultado_tipos = conecta_seleciona($query);
+                            <input  id="matricula" type="text" class="validate" name="matricula">
+                            <label for="matricula">Matrícula</label>
 
-                                while ($lista_tipos = mysqli_fetch_assoc($resultado_tipos)) {
-
-                                   
-                                    echo ('<OPTION value = "' . $lista_tipos['codigo'] . '" >' . $lista_tipos['titulo_tipo']);
-                                }
-                                ?>
-
-                            </SELECT>
                         </div>
 
                     </div>
@@ -78,6 +66,28 @@ require_once('funcoes_uteis.php');
                         <div class="input-field col l6 m6 s12">
                             <input  id="senha" type="text" class="validate" name="senha">
                             <label for="senha">Senha</label>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="input-field col l6 m6 s12">
+
+                            <SELECT NAME = "tipos" SIZE=1>
+                                <option value="" disabled selected>Selecione o tipo</option>
+                                <?php
+                                $query = "SELECT * FROM perfis_usuario";
+                                $resultado_tipos = conecta_seleciona($query);
+
+                                while ($lista_tipos = mysqli_fetch_assoc($resultado_tipos)) {
+
+
+                                    echo ('<OPTION value = "' . $lista_tipos['codigo'] . '" >' . $lista_tipos['titulo_tipo']);
+                                }
+                                ?>
+
+                            </SELECT>
                         </div>
 
                     </div>

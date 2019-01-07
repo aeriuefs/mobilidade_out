@@ -40,17 +40,17 @@
                         <tr>
                             <td>Maria Alice</td>
                             <td>2018/01</td>
-                            <td><a class="waves-effect waves-light btn modal-trigger" href="aeri_recurso_avaliacao.php">Avaliação</a></td>
+                            <td><a class="waves-effect waves-light btn modal-trigger" href="comissao_recurso_avaliacao.php">Avaliação</a></td>
                         </tr>
                         <tr>
                             <td>Alan Silva</td>
                             <td>2018/01</td>
-                            <td><a class="waves-effect waves-light btn modal-trigger" href="aeri_recurso_avaliacao.php">Avaliação</a></td>
+                            <td><a class="waves-effect waves-light btn modal-trigger" href="comissao_recurso_avaliacao.php">Avaliação</a></td>
                         </tr>
                         <tr>
                             <td>Jonathan Silva</td>
                             <td>2018/01</td>
-                            <td><a class="waves-effect waves-light btn modal-trigger" href="aeri_recurso_avaliacao.php">Avaliação</a></td>
+                            <td><a class="waves-effect waves-light btn modal-trigger" href="comissao_recurso_avaliacao.php">Avaliação</a></td>
                         </tr>
                     </tbody>
                 </table>

@@ -33,9 +33,9 @@ require_once('funcoes_uteis.php');
 
                 <br>
 
-                <p><b>Nome:</b> Maria Alice</p>
-                <p><b>Matrícula:</b> 22222267</p>
-                <h6 class="center-align uppercase">Plano de trabalho</h6>
+                <b>Nome:</b> Júlio César Andrade Silva <br><b>Matrícula:</b> 22222267 <br><b>Curso:</b> Engenharia de Computação
+
+                <h6 class="center-align uppercase orange-text">Plano de trabalho</h6>
 
                 <form class="col s12">
 
@@ -64,7 +64,7 @@ require_once('funcoes_uteis.php');
                     </table>
 
                     <br>
-                    <h6 class="uppercase center-align">Participações /Organizações em/de Reuniões/Eventos por área de formação (máx 10 pontos)</h6>
+                    <h6 class="uppercase center-align orange-text">Participações /Organizações em/de Reuniões/Eventos por área de formação (máx 10 pontos)</h6>
                     <br>
                     <table class="bordered highlight responsive-table">
                         <thead>
@@ -139,7 +139,7 @@ require_once('funcoes_uteis.php');
                         </tbody>                      
                     </table>
                     <br>
-                    <h6 class="uppercase center-align">Indicadores de Produção Científica, Tecnológica e Artística</h6>
+                    <h6 class="uppercase center-align orange-text">Indicadores de Produção Científica, Tecnológica e Artística</h6>
 
                     <table class="bordered highlight responsive-table">
                         <thead>
@@ -178,7 +178,7 @@ require_once('funcoes_uteis.php');
 
                     </table>
                     <br>
-                    <h6 class="uppercase center-align">Representação/Liderança Estudantil em instâncias da Universidade (máx 10 pontos)</h6>
+                    <h6 class="uppercase center-align  orange-text">Representação/Liderança Estudantil em instâncias da Universidade (máx 10 pontos)</h6>
 
                     <table class="bordered highlight responsive-table">
                         <thead>
@@ -200,8 +200,8 @@ require_once('funcoes_uteis.php');
                         </tbody>                      
                     </table>
                     <br>
-                    
-                    <h6 class="uppercase center-align">Participação em Programa Acadêmico Institucional ou Estágios (máx 10 pontos)</h6>
+
+                    <h6 class="uppercase center-align  orange-text">Participação em Programa Acadêmico Institucional ou Estágios (máx 10 pontos)</h6>
 
                     <table class="bordered highlight responsive-table">
                         <thead>
@@ -227,8 +227,8 @@ require_once('funcoes_uteis.php');
                         </tbody>                      
                     </table>
                     <br>
-                    
-                    <h6 class="uppercase center-align">Carta de Recomendação</h6>
+
+                    <h6 class="uppercase center-align  orange-text">Carta de Recomendação</h6>
 
                     <table class="bordered highlight responsive-table">
                         <thead>
@@ -271,8 +271,8 @@ require_once('funcoes_uteis.php');
                         </tbody>                      
                     </table>
                     <br>
-                    
-                    <h6 class="uppercase center-align">Outros</h6>
+
+                    <h6 class="uppercase center-align  orange-text">Outros</h6>
 
                     <table class="bordered highlight responsive-table">
                         <thead>
@@ -340,7 +340,14 @@ require_once('funcoes_uteis.php');
                     </div>
                 </div>
 
-                <button class="btn waves-effect waves-light blue-grey " type="submit" name="detalhes"> Salvar </button>
+                <br><br>
+
+                <p><b class="red-text">ATENÇÃO:</b> O botão <b class="blue-text">Salvar</b> guarda as informações preenchidas para que você possa continuar posteriormente. Em contra partida, o 
+                    botão <b class="orange-text">Finalizar</b> fecha o formulário, salva as informações e as envia para a coordenação da AERI. </p>
+
+                <button class="btn waves-effect waves-light blue " type="submit" name="detalhes"> Salvar </button>
+                <button class="btn waves-effect waves-light orange " type="submit" name="detalhes"> Finalizar </button>
+
 
             </section>
 

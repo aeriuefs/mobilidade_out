@@ -33,7 +33,7 @@ require_once('funcoes_uteis.php');
 
             <section class="section container">
 
-                <h4 class="center-align uppercase">Atualização de Cadastro Básico</h4>
+                <h4 class="center-align uppercase">Cadastro de Candidato</h4>
 
                 <form class="col s12" action="bd_candidato_atualizar_dados_pessoais.php" method="POST">
 
@@ -43,18 +43,24 @@ require_once('funcoes_uteis.php');
                     $res = mysqli_fetch_assoc($resultado);
                     ?>
 
-                    <b>Dados Pessoais</b>
+                    <b class="orange-text">Dados Pessoais</b>
 
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12">
-                            <input  id="nome" type="text" name="nome" class="validate" value="<?php echo($res['nome']); ?>">
+                            <input  id="nome" type="text" name="nome" class="validate" required value="<?php echo($res['nome']); ?>" pattern="[a-zA-Z\s]+">
                             <label for="nome">Nome Completo</label>
                         </div>
 
                         <div class="input-field col l6 m6 s12">
-                            <input id="email" type="email" name="email" class="validate" value="<?php echo($res['email']); ?>">
-                            <label for="email">E-mail</label>
+
+                            <SELECT NAME = "sexo" SIZE=1>
+
+                                <option value="Feminino" <?php echo(($res['sexo'] == 'Feminino') ? "selected" : ""); ?> >Feminino</option>
+                                <option value="Masculino" <?php echo(($res['sexo'] == 'Masculino') ? "selected" : ""); ?> >Masculino</option>
+
+                            </SELECT>
+                            
                         </div>
 
                     </div>
@@ -62,31 +68,13 @@ require_once('funcoes_uteis.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12">
-                            <input  id="cpf" type="number" name="cpf" class="validate" value="<?php echo($res['cpf']); ?>">
-                            <label for="cpf">CPF</label>
+                            <input  id="matricula" type="number" name="matricula" class="validate" value="<?php echo($res['matricula']); ?>" required>
+                            <label for="matricula">Matrícula</label>
                         </div>
 
                         <div class="input-field col l6 m6 s12">
-
-
-
-                            <SELECT NAME = "curso" SIZE=1>
-
-                                <?php
-                                $query = "SELECT * FROM cursos";
-                                $resultado_cursos = conecta_seleciona($query);
-                                
-                                if($res['curso']==''){
-                                echo '<option value="" disabled selected>Selecione seu curso</option>';
-                                }
-                                
-                                while ($lista_cursos = mysqli_fetch_assoc($resultado_cursos)) {
-
-                                    echo ('<OPTION value = "' . $lista_cursos['codigo'] . '"' . (($lista_cursos['codigo'] == $res['curso']) ? "selected" : "") . '>' . $lista_cursos['nome']);
-                                }
-                                ?>
-
-                            </SELECT>
+                            <input  id="cpf" type="number" name="cpf" class="validate" value="<?php echo($res['cpf']); ?>" required>
+                            <label for="cpf">CPF</label>
                         </div>
 
                     </div>
@@ -94,42 +82,13 @@ require_once('funcoes_uteis.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12 ">
-                            <input  id="rg" type="number" name="rg" class="validate" value="<?php echo($res['rg']); ?>">
+                            <input  id="rg" type="number" name="rg" class="validate" value="<?php echo($res['rg']); ?>" required>
                             <label for="rg">Registro geral (RG)</label>
                         </div>
 
                         <div class="input-field col l6 m6 s12">
-                            <input  id="orgao_expedidor" type="text" name="orgao_expedidor" class="validate" value="<?php echo($res['orgao_expedidor']); ?>">
+                            <input  id="orgao_expedidor" type="text" name="orgao_expedidor" class="validate" value="<?php echo($res['orgao_expedidor']); ?>" required>
                             <label for="orgao_expedidor">Orgão expedidor</label>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-
-                        <p>
-                            <input name="sexo" type="radio" id="feminino" value="F" <?php echo(($res['sexo'] == 'F') ? "checked" : ""); ?> />
-                            <label for="feminino">Sou do sexo feminino.</label>
-                        </p>
-
-                        <p>
-                            <input name="sexo" type="radio" id="masculino" value="M" <?php echo(($res['sexo'] == 'M') ? "checked" : ""); ?>/>
-                            <label for="masculino">Sou do sexo masculino.</label>
-                        </p>
-
-
-                    </div>
-
-                    <div class="row">
-
-                        <div class="input-field col l6 m6 s12 ">
-                            <input  id="telefone" type="text" class="validate" name="telefone" value="<?php echo($res['telefone']); ?>" >
-                            <label for="telefone">Telefone</label>
-                        </div>
-
-                        <div class="input-field col l6 m6 s12 ">
-                            <input  id="telefone" type="text" class="validate" name="passaporte" value="<?php echo($res['passaporte']); ?>" >
-                            <label for="telefone">Passaporte</label>
                         </div>
 
                     </div>
@@ -143,72 +102,118 @@ require_once('funcoes_uteis.php');
 
                         </div>
 
+                        <div class="input-field col l6 m6 s12">
+
+                            <SELECT NAME = "curso" SIZE=1>
+
+                                <?php
+                                $query = "SELECT * FROM cursos";
+                                $resultado_cursos = conecta_seleciona($query);
+
+                                if ($res['curso'] == '') {
+                                    echo '<option value="" disabled selected>Selecione seu curso</option>';
+                                }
+
+                                while ($lista_cursos = mysqli_fetch_assoc($resultado_cursos)) {
+
+                                    echo ('<OPTION value = "' . $lista_cursos['nome'] . '"' . (($lista_cursos['nome'] == $res['curso']) ? "selected" : "") . '>' . $lista_cursos['nome']);
+                                }
+                                ?>
+
+                            </SELECT>
+                        </div>
+
                     </div>
 
-                    <b>Pesquisa de indicadores socioeconômicos</b>
-
-                    <p>Forma de ingresso </p>
+                    <b class="orange-text">Contato</b>
 
                     <div class="row">
 
-                        <P>
+                        <div class="input-field col l6 m6 s12 ">
+                            <input  id="telefone" type="text" class="validate" name="telefone_fixo" value="<?php echo($res['telefone']); ?>">
+                            <label for="telefone">Telefone Fixo</label>
+                        </div>
 
-                            <input name="forma_ingresso" type="radio" id="cotista" value="1" <?php echo(($res['forma_ingresso'] == '1') ? "checked" : ""); ?> />
-                            <label for="cotista">Cotista</label>
-
-                        </p>
-
-                        <p>
-
-                            <input name="forma_ingresso" type="radio" id="quilombola" value="2" <?php echo(($res['forma_ingresso'] == '2') ? "checked" : ""); ?> />
-                            <label for="quilombola">Quilombola</label>
-
-                        </p>
-
-                        <p>
-
-                            <input name="forma_ingresso" type="radio" id="indigena" value="3" <?php echo(($res['forma_ingresso'] == '3') ? "checked" : ""); ?> />
-                            <label for="indigena">Indígena</label>
-
-                        </p>
-
-                        <p>
-
-                            <input name="forma_ingresso" type="radio" id="nao_cotista" value="4" <?php echo(($res['forma_ingresso'] == '4') ? "checked" : ""); ?> />
-                            <label for="nao_cotista">Não cotistista</label>
-
-                        </p>
-
-                        <p>
-
-                            <input name="forma_ingresso" type="radio" id="nao_informado" value="0" <?php echo(($res['forma_ingresso'] == '0') ? "checked" : ""); ?> />
-                            <label for="nao_cotista">Não informado</label>
-
-                        </p>
-                    </div>
-
-                    <div class="row">
-                        <p>Aluno residente</p>
-                        <p>
-
-                            <input type="checkbox" id="aluno_residente" name="aluno_residente" value="1" <?php echo(($res['aluno_residente'] == '1') ? "checked" : ""); ?>/>
-                            <label for="aluno_residente">Sim. Sou morador da residência universitária.</label>
-                        </p>
+                        <div class="input-field col l6 m6 s12 ">
+                            <input  id="celular" type="text" class="validate" name="celular" value="<?php echo($res['celular']); ?>">
+                            <label for="celular">Celular</label>
+                        </div>
 
                     </div>
 
                     <div class="row">
 
-                        <button class="btn waves-effect waves-light blue-grey " type="submit" name="entrar">Atualizar dados
+                        <div class="input-field col l6 m6 s12">
+                            <input id="email" type="email" name="email" class="validate" required value="<?php echo($res['email']); ?>">
+                            <label for="email">E-mail</label>
+                        </div>
 
-                            <i class="material-icons right">chevron_right</i>
+                    </div>
 
+
+                    <b class="orange-text">Pesquisa de indicadores socioeconômicos</b>
+
+                    <div class="row">
+
+                        <div class="input-field col l6 m6 s12">
+                            <p>Forma de ingresso </p>
+                            <p>
+
+                                <input name="forma_ingresso" type="radio" id="cotista" value="1" <?php echo(($res['forma_ingresso'] == '1') ? "checked" : ""); ?> />
+                                <label for="cotista">Cotista</label>
+
+                            </p>
+
+                            <p>
+
+                                <input name="forma_ingresso" type="radio" id="quilombola" value="2" <?php echo(($res['forma_ingresso'] == '2') ? "checked" : ""); ?> />
+                                <label for="quilombola">Quilombola</label>
+
+                            </p>
+
+                            <p>
+
+                                <input name="forma_ingresso" type="radio" id="indigena" value="3" <?php echo(($res['forma_ingresso'] == '3') ? "checked" : ""); ?> />
+                                <label for="indigena">Indígena</label>
+
+                            </p>
+
+                            <p>
+
+                                <input name="forma_ingresso" type="radio" id="nao_cotista" value="4" <?php echo(($res['forma_ingresso'] == '4') ? "checked" : ""); ?> />
+                                <label for="nao_cotista">Não cotistista</label>
+
+                            </p>
+
+                            <p>
+
+                                <input name="forma_ingresso" type="radio" id="nao_informado" value="0" <?php echo(($res['forma_ingresso'] == '0') ? "checked" : ""); ?> />
+                                <label for="nao_informado">Não informado</label>
+
+                            </p>
+
+                        </div>
+
+                        <div class="input-field col l6 m6 s12">
+
+                            <p>Aluno residente</p>
+                            <p>
+                                <input type="checkbox" id="aluno_residente" name="aluno_residente" value="1" <?php echo(($res['aluno_residente'] == '1') ? "checked" : ""); ?>/>
+                                <label for="aluno_residente">Sim. Sou morador da residência universitária.</label>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <button class="btn waves-effect waves-light blue-grey " type="submit" name="Cadastrar">Atualizar Cadastro
                         </button>
 
                     </div>
 
                 </form>
-
             </section>
 
         </main>

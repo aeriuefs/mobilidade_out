@@ -7,7 +7,20 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
     unset($_SESSION['senha']);
     
 } else {
-    header('location:candidato_home.php');
+    
+    if ($_SESSION['tipo'] == '1' || $_SESSION['tipo'] == '2') {
+
+        header('location:aeri_home.php');
+    } elseif ($_SESSION['tipo'] == '3') {
+
+        header('location:comissao_home.php');
+    } elseif ($_SESSION['tipo'] == '4') {
+
+        header('location:colegiado_home.php');
+    } elseif ($_SESSION['tipo'] == '0') {
+
+        header('location:candidato_home.php');
+    }
 }
 
 ?>
@@ -96,17 +109,9 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
 
         <?php
         include("rodape_pagina.php");
+        include("scripts.php");
+        
         ?>
 
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
-
-        <script>   $(document).ready(function () {
-                $('select').material_select();
-            });
-        </script>
     </body>
 </html>

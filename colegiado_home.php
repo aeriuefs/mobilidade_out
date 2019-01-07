@@ -19,7 +19,7 @@
 
         <header>
             <?php
-            include("navbar_aeri_1.php");
+            include("navbar_aeri_2.php");
             ?>
         </header>
 
@@ -39,11 +39,11 @@
                         <div class="card blue-grey">
                             <div class="card-image">
                                 <img src="img/home-inscri.jpg">
-                                <span class="card-title"><strong>Não sei o nome certo</strong></span>
+                                <span class="card-title"><strong>Processos</strong></span>
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="aeri_barema_lista_alunos.php" class="white-text">Avaliação</a>
+                                <a href="colegiado_pareceres.php" class="white-text">Avaliação</a>
                             </div>
                         </div>
                     </div>

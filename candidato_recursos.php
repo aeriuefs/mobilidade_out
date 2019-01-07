@@ -38,10 +38,9 @@ require_once('funcoes_uteis.php');
 
 
 
-                <p>Clicando em "Datalhes", é possível visualizar os dados enviados na sua inscrição. Clicando em Acompanhar Inscrição, poderá visualizar o histórico de atualizações. Se a opção de <b>recurso</b> for cabível, esta também estará disponível nesta sessão.</p>
-
-                <br><br>
-                <b>&nbsp;Periodos de recurso em aberto</b>
+                <p>Na primeira sessão desta página você pode visualizar os períodos de recurso que estão em aberto. Os recursos que você solicitou são exibidos em seguida. </p>
+                
+                <b class="orange-text">&nbsp;Períodos de recurso em aberto</b>
 
                 <br>
                 <table class="striped">
@@ -62,24 +61,23 @@ require_once('funcoes_uteis.php');
 
                         while ($res = mysqli_fetch_assoc($resultado)) {
 
-                            if(data_no_intervalor($res['data_inicio'], $res['data_fim'])) {
+                            if (data_no_intervalor($res['data_inicio'], $res['data_fim'])) {
 
                                 echo('<tr><td>' . $res['edital'] . '</td>');
                                 echo('<td>' . $res['data_fim'] . '</td>');
 
-                                echo('<td><form style="display: inline;" method="post" action="candidato_solicitacao_recurso.php" > <input type="hidden" name="edital" value="' . $res['edital'] . '"/>
-                         <button class="btn waves-effect waves-light blue-grey " type="submit" name="acompanhar"> Solicitar </button> </form></td></tr>');
+                                echo('<td><form style="display: inline;" action="candidato_solicitacao_recurso.php" method="post"> '
+                                        . '<input type="hidden" name="edital" value="' . $res['edital'] . '"/>
+                         <button class="btn waves-effect waves-light blue-grey " type="submit" name="solicitar"> Solicitar </button> </form></td></tr>');
                             }
                         }
                         ?>
-
-
 
                     </tbody>
                 </table>
 
                 <br><br>
-                <b>&nbsp;Recursos solicitados</b>
+                <b class="orange-text">&nbsp;Recursos solicitados</b>
 
                 <br>
                 <table class="striped">
@@ -96,7 +94,7 @@ require_once('funcoes_uteis.php');
                     <tbody>
 
                         <?php
-                        $query = "SELECT * FROM candidato_recursos";
+                        $query = "SELECT * FROM candidato_recursos WHERE matricula='" . $_SESSION['matricula'] . "'";
                         $resultado = conecta_seleciona($query);
 
                         while ($res = mysqli_fetch_assoc($resultado)) {

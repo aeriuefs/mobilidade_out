@@ -37,7 +37,7 @@ $query7 = "INSERT INTO historico_candidatos(matricula, edital, data) VALUES ('" 
 
 conecta_insere($query7);
 
-echo "<script>alert('Sua candidatura foi realizada com sucesso!');</script>";
+//echo "<script>alert('Sua candidatura foi realizada com sucesso!');</script>";
 
 header("refresh: 0; url=candidato_inscricoes.php");
 ?>

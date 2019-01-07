@@ -28,13 +28,12 @@ require_once('funcoes_uteis.php');
 
     <main>
 
-        <?php
-        include("parallax.php");
-        ?>
-
         <section class="section container">
 
-            <h4 class="center-align uppercase">Designação de Avaliador</h4> 
+            <h4 class="center-align uppercase">Designação de Avaliador</h4>
+            
+            <p>Nesta sessão você tem controle sobre o avaliador de cada estudante neste edital. Os estudantes apresentam um status de <b>"Designado"</b> e <b>"Não designado"</b> caso já tenha sido atribuído a ele um avaliador ou não, respectivamente. Quando um avaliador começa a avaliar um
+            estudante este mudará de status para <b>"Em avaliação"</b>. Ao término da avaliação o status do estudante é alterado para <b>"Avaliado"</b>.  </p>
 
 
             <?php
@@ -43,7 +42,7 @@ require_once('funcoes_uteis.php');
 
             while ($res = mysqli_fetch_assoc($resultado)) {
 
-                echo ('<form style="display: inline;" method="post" action="" enctype="multipart/form-data">');
+                echo ('<form style="display: inline;" method="post" action="bd_aeri_comissao_designacoes.php" enctype="multipart/form-data">');
 
                 if ($res['designado'] == '1') {
                     echo ('<span class="new badge grem" data-badge-caption="Designado"></span>');
@@ -51,24 +50,38 @@ require_once('funcoes_uteis.php');
                     echo ('<span class="new badge orange" data-badge-caption="Não designado"></span>');
                 }
 
-                echo ('<p> Nome: ' . $res['nome'] . ' | Matrícula: ' . $res['matricula'] . ' | Curso: ' . $res['nota_final'] . '</p>');
+                echo ('<p><b class="orange-text"> Nome: ' . $res['nome'] . ' | Matrícula: ' . $res['matricula'] . '</b></p>');
 
                 $query_comissao = "SELECT * FROM servidores WHERE tipo = '3'";
                 $resultado2 = conecta_seleciona($query_comissao);
+                
+                echo('                    <div class="row">
+
+                        <div class="input-field col l6 m6 s12">
+                            <input  id="escore" type="number" name="escore" value="' . $res['escore'] . '" class="validate" required>
+                            <label for="escore">Escore</label>
+                        </div>
+
+                        <div class="input-field col l6 m6 s12">
+                            <input  id="posicao" type="number" name="posicao" value="' . $res['posicao'] . '" class="validate" required>
+                            <label for="posicao">Posição no curso</label>
+                        </div>
+
+                    </div>');
 
                 echo ('<SELECT NAME = "avaliadores" SIZE=1 required="">');
                 echo ('<option value="" disabled selected>Selecione o avaliador</option>');
                 while ($comissao = mysqli_fetch_assoc($resultado2)) {
 
-                    echo ('<OPTION value = "' . $comissao['nome'] . '">' . $comissao['nome']);
+                    echo ('<OPTION value = "' . $comissao['nome'] . '"' . (($comissao['nome'] == $res['avaliador']) ? "selected" : "") . '>' . $comissao['nome']);
                 }
 
                 echo ('</SELECT>');
 
                 echo ('<input type="hidden" name="matricula" value="' . $res['matricula'] . '"/>');
                 echo ('<input type="hidden" name="edital" value="' . $res['edital'] . '"/>');
-                echo ('<button class="btn waves-effect waves-light" type="submit" name="salvar"> Salvar <i class="material-icons right"> save </i> </button>');
-                echo ('</form>');
+                echo ('<button class="btn waves-effect waves-light grey darken-3" type="submit" name="salvar"> Atualizar <i class="material-icons right"> save </i> </button>');
+                echo ('</form><br><br><hr>');
                 
             }
             ?>

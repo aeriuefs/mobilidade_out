@@ -17,7 +17,7 @@ $arquivo = $_GET['arquivo'];
 $data = date("Y/m/d");;
 
 
-$query3 = "INSERT INTO candidato_recursos(matricula, edital, data, justificativa) VALUES ('" . $_SESSION['matricula'] . "','" . $edital . "','" . $data . "','')";
+$query3 = "INSERT INTO candidato_recursos(matricula, edital, data, explanacao) VALUES ('" . $_SESSION['matricula'] . "','" . $edital . "','" . $data . "','" . $explanacao . "')";
 
 conecta_insere($query3);
 

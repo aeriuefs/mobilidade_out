@@ -51,27 +51,17 @@ require_once('funcoes_uteis.php');
                     </div>
 
                     <div class="col s12 m4 uppercase center-align">
+                        
                         <div class="card blue-grey">
+                            
                             <div class="card-image">
-                                <img src="img/dados_bancarios.jpg">
-                                <span class="card-title"><strong>Financeiro</strong></span>
+                                <img src="img/finalizacao.jpg">
+                                <span class="card-title"><strong>Dados de bolsa</strong></span>
                             </div>
 
                             <div class="card-action hoverable">
 
-                                <?php
-                                $query = "SELECT * FROM candidato_dados_bancarios WHERE matricula='" . $_SESSION['matricula'] . "'";
-
-                                $result = conecta_seleciona($query);
-
-                                if (mysqli_num_rows($result) > 0) {
-
-                                    echo '<a href="candidato_atualizar_dados_bancarios.php" class="white-text">Dados Bancários</a>';
-                                } else {
-
-                                    echo '<a href="candidato_adicionar_dados_bancarios.php" class="white-text">Dados Bancários</a>';
-                                }
-                                ?>
+                                <a href="candidato_finalizar_cadastro.php" class="white-text">Conta e passaporte</a>
 
                             </div>
 
@@ -94,8 +84,6 @@ require_once('funcoes_uteis.php');
 
                 </div>
 
-
-
             </section>
 
         </main>
@@ -103,7 +91,6 @@ require_once('funcoes_uteis.php');
         <?php
         include("rodape_pagina.php");
         ?>
-
 
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>

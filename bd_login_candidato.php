@@ -13,6 +13,7 @@ $result = conecta_seleciona($query);
 $row = mysqli_fetch_row($result);
 
 if (mysqli_num_rows($result) > 0) {
+    $_SESSION['tipo'] = 0;
     $_SESSION['matricula'] = $matricula;
     $_SESSION['senha'] = $senha;
     $_SESSION['nome'] = $row[2];

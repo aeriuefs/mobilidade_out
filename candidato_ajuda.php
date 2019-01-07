@@ -69,6 +69,7 @@ require_once('funcoes_uteis.php');
                                             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Entendi</a>
                                         </div>
                                     </div>
+                                    
                                 </td>
                             </tr>
 

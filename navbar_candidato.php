@@ -9,7 +9,7 @@
                 <li><a href="http://aeri.uefs.br/">Portal AERI</a></li>
                 <li><a href="http://aeri.uefs.br/contato.php#conteudo">Contato</a></li>  
                 <li><a href="candidato_notificacoes.php"><i class="large material-icons">notifications</i></a></li>
-                <li><a href="bd_logout.php"><span class="new badge blue accent-1" data-badge-caption=""><?php echo($_SESSION['nome'] . ' ( SAIR )') ?></span></a></li>
+                <li><a href="bd_logout.php"><span class="new badge pink lighten-1" data-badge-caption=""><?php echo($_SESSION['nome'] . ' ( SAIR )') ?></span></a></li>
                 
             </ul>
 

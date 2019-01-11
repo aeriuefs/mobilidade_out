@@ -73,13 +73,13 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         </div>
 
                         <div class="row">
-                            <button class="btn waves-effect waves-light blue-grey " type="submit" name="entrar">Entrar
+                            <button class="btn waves-effect waves-light red lighten-2" type="submit" name="entrar">Entrar
                                 <i class="material-icons right">chevron_right</i>
                             </button>
                         </div>
 
                         <div class="row">
-                            <a href="candidato_recuperar_senha.php">Esqueci minha senha</a>
+                            <a href="candidato_recuperar_senha.php" class="grey-text">Esqueci minha senha :(</a>
                         </div>
 
                     </form>
@@ -91,10 +91,10 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                                 <div class="card-image">
                                     <img src="img/cadastro.jpg">
                                     <span class="card-title">Cadastro</span>
-                                    <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" href="candidato_cadastro.php"><i class="material-icons">person_add</i></a>
+                                    <a class="btn-floating halfway-fab waves-effect waves-light red lighten-2" href="candidato_cadastro.php"><i class="material-icons">add</i></a>
                                 </div>
                                 <div class="card-content">
-                                    <p>Se você é aluno da instituição, possui uma matrícula ativa e tem intenção de fazer a inscrição em um processo de intercâmbio, clique no botão para se cadastar.</p>
+                                    <p>Se você é aluno da instituição, possui uma matrícula ativa e tem intenção de fazer a inscrição em um processo de intercâmbio, clique no botão "+" para se cadastar.</p>
                                 </div>
                             </div>
                         </div>

@@ -53,7 +53,7 @@ h5:after {
     display: block;
     width: 60px;
     height: 3px;
-    background: #6982a1;
+    background: gray;
     margin: 10px 0;
 }
 
@@ -62,7 +62,7 @@ h4:after {
     display: block;
     width: 60px;
     height: 3px;
-    background: #6982a1;
+    background: gray;
     margin: 10px auto;
 }
 

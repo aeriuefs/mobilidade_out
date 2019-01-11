@@ -14,11 +14,13 @@ $id = $_POST['id'];
 
 <!DOCTYPE html>
 <html lang="pt-br">
+    
     <head>
         <?php
         include("topo_pagina.php");
         ?>
     </head>
+    
     <body>
 
         <header>
@@ -37,7 +39,7 @@ $id = $_POST['id'];
 
                 <h4 class="center-align uppercase">Detalhes do Recurso</h4>
 
-                <b> Dados pessoais</b>
+                <b class="red-text"> Dados pessoais</b>
 
                 <?php
                 $query = "SELECT * FROM candidato_recursos WHERE id='" . $id . "'";
@@ -50,17 +52,15 @@ $id = $_POST['id'];
                 <p>Data: <span style="color: #737373"> <?php echo($res['data']); ?> </span></p>
 
                 <p>Explanação: <span style="color: #737373"> <?php echo($res['explanacao']); ?> </span></p>
-                
-                <a>Arquivo enviado</a>
-                
+                  
                 <br><br>
                 
-                <b>Resultado</b>
+                <b class="red-text">Resultado</b>
 
                 <p>Status: <span style="color: #737373"> <?php echo($res['status']); ?> </span></p>
 
                 <p>Justificativa da comissão: <span style="color: #737373"> <?php echo($res['justificativa']); ?> </span></p>
-
+                   
             </section>
 
         </main>
@@ -70,13 +70,8 @@ $id = $_POST['id'];
 
         <?php
         include("rodape_pagina.php");
+        include ("script.php");
         ?>
 
-
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
     </body>
 </html>

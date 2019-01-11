@@ -40,7 +40,7 @@ require_once('funcoes_uteis.php');
 
                 <p>Na primeira sessão desta página você pode visualizar os períodos de recurso que estão em aberto. Os recursos que você solicitou são exibidos em seguida. </p>
                 
-                <b class="orange-text">&nbsp;Períodos de recurso em aberto</b>
+                <b class="red-text uppercase">&nbsp;Períodos de recurso em aberto</b>
 
                 <br>
                 <table class="striped">
@@ -77,7 +77,7 @@ require_once('funcoes_uteis.php');
                 </table>
 
                 <br><br>
-                <b class="orange-text">&nbsp;Recursos solicitados</b>
+                <b class="red-text uppercase">&nbsp;Recursos solicitados</b>
 
                 <br>
                 <table class="striped">

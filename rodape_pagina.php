@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col s12 m6">
                 <h5>Sobre</h5>
-                <p class="grey-text text-lighten-4">
+                <p>
                     O Mobilidade Out é um novo passo para automatização dos processos da AERI. Estamos empenhados em 
                     oferecer mais comodidade e transparência neste processo que pode ser um marco na sua história. Ficamos felizes
                     em contribuir com o seu futuro!
@@ -35,9 +35,9 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright blue-grey">
+    <div class="footer-copyright grey darken-1">
         <div class="container">
-
+            Direitos e permissões (Em construção)
         </div>
     </div>
 </footer>

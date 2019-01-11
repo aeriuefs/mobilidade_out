@@ -34,10 +34,10 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
 
                 <div class="row">
                     <div class="col s12 m4 uppercase center-align">
-                        <div class="card blue-grey">
+                        <div class="card  grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-inscri.jpg">
-                                <span class="card-title"><strong>Cadastro</strong></span>
+                                
                             </div>
 
                             <div class="card-action hoverable">
@@ -46,10 +46,10 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         </div>
                     </div>
                     <div class="col s12 m4 uppercase center-align">
-                        <div class="card blue-grey">
+                        <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-editais.png">
-                                <span class="card-title"><strong>Inscrição</strong></span>
+                                
                             </div>
 
                             <div class="card-action hoverable">
@@ -59,10 +59,10 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                     </div>
 
                     <div class="col s12 m4 uppercase center-align">
-                        <div class="card blue-grey">
+                        <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-processos.jpeg">
-                                <span class="card-title"><strong>Processos</strong></span>
+                                
                             </div>
 
                             <div class="card-action hoverable">
@@ -76,40 +76,40 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                 <div class="row">
 
                     <div class="col s12 m4 uppercase center-align">
-                        <div class="card blue-grey">
+                        <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-documentos.jpg">
-                                <span class="card-title"><strong>Documentos</strong></span>
+                                
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="candidato_documentos.php" class="white-text">Anexar documentos</a>
+                                <a href="candidato_documentos.php" class="white-text">Documentos</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="col s12 m4 uppercase center-align">
-                        <div class="card blue-grey">
+                        <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-recursos.jpg">
-                                <span class="card-title"><strong>Recursos</strong></span>
+                                
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="candidato_recursos.php" class="white-text">Pedidos de recurso</a>
+                                <a href="candidato_recursos.php" class="white-text">Recurso</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="col s12 m4 uppercase center-align">
-                        <div class="card blue-grey">
+                        <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-profi.jpg">
-                                <span class="card-title"><strong>Proficiência</strong></span>
+                                
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="candidato_proficiencia.php" class="white-text">Provas marcadas</a>
+                                <a href="candidato_proficiencia.php" class="white-text">Proficiência</a>
                             </div>
                         </div>
                     </div>
@@ -120,14 +120,14 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                 <div class="row">
 
                     <div class="col s12 m4 uppercase center-align">
-                        <div class="card blue-grey">
+                        <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-ajuda.jpg">
-                                <span class="card-title"><strong>Ajuda</strong></span>
+                                
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="candidato_ajuda.php" class="white-text">Tópicos de auxílio</a>
+                                <a href="candidato_ajuda.php" class="white-text">Tópicos de ajuda</a>
                             </div>
                         </div>
                     </div>

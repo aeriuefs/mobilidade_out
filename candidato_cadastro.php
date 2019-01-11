@@ -29,7 +29,7 @@ require_once('funcoes_uteis.php');
 
                 <form class="col s12" action="bd_candidato_cadastro.php" method="POST">
 
-                    <b class="orange-text">Dados Pessoais</b>
+                    <b class="red-text">Dados Pessoais</b>
 
                     <div class="row">
 
@@ -49,8 +49,6 @@ require_once('funcoes_uteis.php');
 
                             </SELECT>
                         </div>
-
-
 
                     </div>
 
@@ -82,9 +80,8 @@ require_once('funcoes_uteis.php');
 
                     </div>
 
-
-
                     <label>Data de nascimento</label>
+
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12">
@@ -112,17 +109,18 @@ require_once('funcoes_uteis.php');
                                 ?>
 
                             </SELECT>
+
                         </div>
 
                     </div>
 
-                    <b class="orange-text">Contato</b>
+                    <b class="red-text">Contato</b>
 
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12 ">
-                            <input  id="telefone" type="text" class="validate" name="telefone_fixo" >
-                            <label for="telefone">Telefone Fixo</label>
+                            <input  id="telefone_fixo" type="text" class="validate" name="telefone_fixo" >
+                            <label for="telefone_fixo">Telefone Fixo</label>
                         </div>
 
                         <div class="input-field col l6 m6 s12 ">
@@ -141,7 +139,7 @@ require_once('funcoes_uteis.php');
 
                     </div>
 
-                    <b class="orange-text">Segurança</b>
+                    <b class="red-text">Segurança</b>
 
                     <div class="row">
 
@@ -157,60 +155,58 @@ require_once('funcoes_uteis.php');
 
                     </div>
 
-                    <b class="orange-text">Pesquisa de indicadores socioeconômicos</b>
+                    <b class="red-text">Pesquisa de indicadores socioeconômicos</b>
 
+                    <div class="row">
 
+                        <p>Forma de ingresso </p>
 
+                        <p>
+                            <input name="forma_ingresso" type="radio" id="cotista" value="1" />
+                            <label for="cotista">Cotista</label>
 
-                    <p>Forma de ingresso </p>
-                    <P>
-                        <input name="forma_ingresso" type="radio" id="cotista" value="1" />
-                        <label for="cotista">Cotista</label>
+                        </p>
 
-                    </p>
+                        <p>
 
-                    <p>
+                            <input name="forma_ingresso" type="radio" id="quilombola" value="2" />
+                            <label for="quilombola">Quilombola</label>
 
-                        <input name="forma_ingresso" type="radio" id="quilombola" value="2" />
-                        <label for="quilombola">Quilombola</label>
+                        </p>
 
-                    </p>
+                        <p>
 
-                    <p>
+                            <input name="forma_ingresso" type="radio" id="indigena" value="3" />
+                            <label for="indigena">Indígena</label>
 
-                        <input name="forma_ingresso" type="radio" id="indigena" value="3" />
-                        <label for="indigena">Indígena</label>
+                        </p>
 
-                    </p>
+                        <p>
 
-                    <p>
+                            <input name="forma_ingresso" type="radio" id="nao_cotista" value="4" />
+                            <label for="nao_cotista">Não cotistista</label>
 
-                        <input name="forma_ingresso" type="radio" id="nao_cotista" value="4" />
-                        <label for="nao_cotista">Não cotistista</label>
+                        </p>
 
-                    </p>
+                        <p>
 
-                    <p>
+                            <input name="forma_ingresso" type="radio" id="nao_informado" value="0" />
+                            <label for="nao_informado">Não informado</label>
 
-                        <input name="forma_ingresso" type="radio" id="nao_informado" value="0" />
-                        <label for="nao_informado">Não informado</label>
+                        </p>
 
-                    </p>
+                        <p>Aluno residente</p>
 
-
-                    <p>Aluno residente</p>
-                    <p>
-                        <input type="checkbox" id="aluno_residente" name="aluno_residente" value="1"/>
-                        <label for="aluno_residente">Sim. Sou morador da residência universitária.</label>
-                    </p>
-
-
+                        <p>
+                            <input type="checkbox" id="aluno_residente" name="aluno_residente" value="1"/>
+                            <label for="aluno_residente">Sim. Sou morador da residência universitária.</label>
+                        </p>
 
                     </div>
 
                     <div class="row">
 
-                        <button class="btn waves-effect waves-light blue-grey " type="submit" name="Cadastrar">Finalizar Cadastro
+                        <button class="btn waves-effect waves-light grey darken-1 " type="submit" name="Cadastrar">Finalizar Cadastro
                         </button>
 
                     </div>
@@ -223,22 +219,8 @@ require_once('funcoes_uteis.php');
 
         <?php
         include("rodape_pagina.php");
+        include("scripts.php");
         ?>
-
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
-
-        <script>
-
-            $(document).ready(function () {
-                $('select').material_select();
-            });
-
-        </script>
-
 
     </body>
 </html>

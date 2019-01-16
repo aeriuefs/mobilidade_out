@@ -91,6 +91,7 @@ $edital = $_POST['edital'];
                         </thead>
 
                         <tbody>
+
                             <?php
                             $caminho_edital = str_replace('/', '-', $edital);
                             $caminho = 'arquivos/editais/' . $caminho_edital . '/candidatos/' . $_SESSION['matricula'] . '/';
@@ -107,12 +108,11 @@ $edital = $_POST['edital'];
 
                             $diretorio->close();
                             ?>
+
                         </tbody>
                     </table>
 
-
                 </div>
-
 
             </section>
 
@@ -123,20 +123,8 @@ $edital = $_POST['edital'];
 
         <?php
         include("rodape_pagina.php");
+        include("scripts.php");
         ?>
 
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
-
-        <script>
-
-            $(document).ready(function () {
-                $('select').material_select();
-            });
-
-        </script>
     </body>
 </html>

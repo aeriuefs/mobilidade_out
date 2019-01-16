@@ -10,7 +10,6 @@ require_once('funcoes_uteis.php');
 
 $edital = $_POST['edital'];
 
-
 $query = "SELECT * FROM candidaturas WHERE matricula='" . $_SESSION['matricula'] . "' AND edital='" . $edital . "'";
 $resultado = conecta_seleciona($query);
 
@@ -24,7 +23,7 @@ if (mysqli_num_rows($resultado) != 0) {
     if (!in_array($res['situacao_atual'], $array)) {
         echo "<script>alert('Você não tem direito ou não necessita pedir este recurso!');</script>";
 
-       header("refresh: 0; url=candidato_home.php");
+        header("refresh: 0; url=candidato_home.php");
     }
 } else {
 
@@ -60,7 +59,8 @@ if (mysqli_num_rows($resultado) != 0) {
                 <h4 class="center-align uppercase"> Pedido de recurso (Edital <?php echo($edital); ?>) </h4>                
 
                 <div class="row">
-                    <form class="col s12" action="bd_candidato_solicitacao_recurso.php">
+
+                    <form class="col s12" method="post" enctype="multipart/form-data" action="bd_candidato_solicitacao_recurso.php">
 
                         <input type="hidden" name="edital" value="<?php echo($edital); ?>"/>
 
@@ -75,12 +75,10 @@ if (mysqli_num_rows($resultado) != 0) {
                             </div>
                         </div>
 
-
-
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Arquivo</span>
-                                <input type="file" name="arquivo">
+                                <input type="file" name="arquivo" accept="application/pdf">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -100,8 +98,6 @@ if (mysqli_num_rows($resultado) != 0) {
                             </p>
 
                         </div>
-
-
 
                         <button class="btn waves-effect waves-light" type="submit" name="enviar">Enviar dados para análise
                             <i class="material-icons right">send</i>

@@ -22,6 +22,7 @@ if (mysqli_num_rows($result) > 0) {
     echo $_SESSION['nome'];
 } else {
     
+    
     header('location:index.php');
 }
 ?>

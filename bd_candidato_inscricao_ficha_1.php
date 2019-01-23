@@ -61,8 +61,14 @@ conecta_insere($query7);
 $caminho_edital = str_replace('/', '-', $edital);
 $caminho1 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/';
 $caminho2 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/arquivos_inscricao/';
+$caminho3 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/documentos/';
+$caminho4 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/recurso/';
+$caminho5 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/certificados/';
 criar_diretorio($caminho1);
 criar_diretorio($caminho2);
+criar_diretorio($caminho3);
+criar_diretorio($caminho4);
+criar_diretorio($caminho5);
 
 $destino = $caminho2 . 'plano_trabalho_opcao_1.pdf';
 upload_arquivo($_FILES['plano_trabalho_opcao_1']['tmp_name'], $destino);
@@ -94,9 +100,12 @@ upload_arquivo($_FILES['historico']['tmp_name'], $destino);
 $destino = $caminho2 . 'porcentagem.pdf';
 upload_arquivo($_FILES['porcentagem']['tmp_name'], $destino);
 
-$destino = $caminho2 . 'foto.pdf';
+$destino = $caminho2 . 'foto.jpg'; //aceitar outras 
 upload_arquivo($_FILES['foto']['tmp_name'], $destino);
 
+//Certificados 
+upload_multiplos_arquivo($_FILES['certificados'], $caminho5);
 
-header("refresh: 0; url=candidato_inscricoes.php");
+
+//header("refresh: 0; url=candidato_inscricoes.php");
 ?>

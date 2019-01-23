@@ -67,7 +67,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Plano de trabalho</span>
-                                <input type="file" name="plano_trabalho_opcao_1">
+                                <input type="file" name="plano_trabalho_opcao_1" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -77,7 +77,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Plano de estudo</span>
-                                <input type="file" name="plano_estudo_opcao_1">
+                                <input type="file" name="plano_estudo_opcao_1" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -111,7 +111,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Plano de trabalho</span>
-                                <input type="file" name="plano_trabalho_opcao_2">
+                                <input type="file" name="plano_trabalho_opcao_2" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -121,7 +121,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Plano de estudo</span>
-                                <input type="file" name="plano_estudo_opcao_2">
+                                <input type="file" name="plano_estudo_opcao_2" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -154,7 +154,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Plano de trabalho</span>
-                                <input type="file" name="plano_trabalho_opcao_3">
+                                <input type="file" name="plano_trabalho_opcao_3" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -164,7 +164,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Plano de estudo</span>
-                                <input type="file" name="plano_estudo_opcao_3">
+                                <input type="file" name="plano_estudo_opcao_3" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -176,7 +176,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Currículo Lattes</span>
-                                <input type="file" name="curriculo_lattes">
+                                <input type="file" name="curriculo_lattes" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -186,7 +186,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Certificados</span>
-                                <input type="file" name="certificados[]" multiple="">
+                                <input type="file" name="certificados[]" multiple="multiple">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text" placeholder="Selecione todos os certificados de comprovação do Currículo Lattes.">
@@ -196,7 +196,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Guia de matrícula</span>
-                                <input type="file" name="guia_matricula">
+                                <input type="file" name="guia_matricula" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -206,7 +206,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Histórico escolar</span>
-                                <input type="file" name="historico">
+                                <input type="file" name="historico" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -216,7 +216,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Comprovante de porcentagem cumprida</span>
-                                <input type="file" name="porcentagem">
+                                <input type="file" name="porcentagem" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -226,7 +226,7 @@ $edital = $_POST['edital'];
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Foto 3x4</span>
-                                <input type="file" name="foto">
+                                <input type="file" name="foto" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">

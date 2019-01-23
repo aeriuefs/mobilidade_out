@@ -17,9 +17,12 @@ $forma_ingresso = isset($_POST["forma_ingresso"]) ? $_POST["forma_ingresso"] : "
 $aluno_residente = isset($_POST["aluno_residente"]) ? $_POST["aluno_residente"] : "0";
 $curso = $_POST["curso"];
 
-$query = "INSERT INTO candidatos(matricula, senha, nome, data_nascimento, telefone, celular, sexo, cpf, rg, orgao_expedidor, email, forma_ingresso, aluno_residente, curso) VALUES ('" . $matricula . "','" . $senha . "','" . $nome . "','" . $data_nascimento . "','" . $telefone . "','" . $celular . "','" . $sexo . "','" . $cpf . "','" . $rg . "','" . $orgao_expedidor . "','" . $email . "','" . $forma_ingresso ."','" . $aluno_residente . "','" . $curso . "')";
+$query = "INSERT INTO candidatos(matricula, senha, nome, data_nascimento, telefone, celular, sexo, cpf, rg, orgao_expedidor, email, forma_ingresso, aluno_residente, curso) VALUES ('" . $matricula . "','" . $senha . "','" . $nome . "','" . $data_nascimento . "','" . $telefone . "','" . $celular . "','" . $sexo . "','" . $cpf . "','" . $rg . "','" . $orgao_expedidor . "','" . $email . "','" . $forma_ingresso . "','" . $aluno_residente . "','" . $curso . "')";
 
-conecta_insere($query);
-echo "<script>alert('Seus cadastro foi realido com sucesso!');</script>";
+if (conecta_insere($query)==FALSE) {
+    echo "<script>alert('Erro ao tentar realizar cadastro.');</script>";
+} else {
+    echo "<script>alert('Seu cadastro foi realizado com sucesso!');</script>";
+}
 header("refresh: 0; url=index.php");
 ?>

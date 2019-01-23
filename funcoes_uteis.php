@@ -7,6 +7,7 @@ function conexao() {
     $host = 'localhost';
     $conex = mysqli_connect($host, $usuario, $senha);
     mysqli_select_db($conex, $banco) or die("Não foi possivel conectar ao banco: ");
+    mysqli_set_charset($conex, "utf8");
 }
 
 function conecta_insere($query) {
@@ -19,8 +20,13 @@ function conecta_insere($query) {
     $conex = mysqli_connect($host, $usuario, $senha);
 
     mysqli_select_db($conex, $banco) or die("Não foi possivel conectar ao banco: ");
+    mysqli_set_charset($conex, "utf8");
 
-    mysqli_query($conex, $query) or die("Não foi possivel conectar ao banco: " . mysqli_error($conex));
+    if (mysqli_query($conex, $query) == FALSE) {
+        return FALSE;
+    } else {
+       return mysqli_insert_id($conex);
+    }
 
     mysqli_close($conex);
 }
@@ -33,6 +39,7 @@ function conecta_seleciona($sql) {
     $host = 'localhost';
     $conex = mysqli_connect($host, $usuario, $senha);
     mysqli_select_db($conex, $banco) or die("Não foi possivel conectar ao banco: ");
+    mysqli_set_charset($conex, "utf8");
 
     $result = mysqli_query($conex, $sql);
 
@@ -56,11 +63,16 @@ function data_no_intervalor($inicio, $fim) {
     if (strtotime($data_atual) >= strtotime($inicio) && strtotime($data_atual) <= strtotime($fim)) {
 
         return 1;
-        
     } else {
 
         return 0;
     }
+}
+
+function formatar_data($data) {
+
+    return date('d/m/Y', strtotime($data));
+    
 }
 
 function download($arquivo) {

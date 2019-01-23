@@ -3,11 +3,11 @@
 require_once('funcoes_uteis.php');
 ?>
 <html lang="pt-br">
-    <head>
-        <?php
-        include("topo_pagina.php");
-        ?>
-    </head>
+
+    <?php
+    include("topo_pagina.php");
+    ?>
+
     <body>
 
         <header>
@@ -34,7 +34,7 @@ require_once('funcoes_uteis.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12">
-                            <input  id="nome" type="text" name="nome" class="validate" required pattern="[a-zA-Z\s]+">
+                            <input  id="nome" type="text" name="nome" class="validate" required pattern="[a-zA-ZÀ-ú\s]+">
                             <label for="nome">Nome Completo</label>
                         </div>
 
@@ -86,13 +86,13 @@ require_once('funcoes_uteis.php');
 
                         <div class="input-field col l6 m6 s12">
 
-                            <input type="date"  class="validate" name="data_nascimento" >
+                            <input type="date"  class="validate" name="data_nascimento" required >
 
                         </div>
 
                         <div class="input-field col l6 m6 s12">
 
-                            <SELECT NAME = "curso" SIZE=1>
+                            <SELECT NAME = "curso" SIZE=1 required>
 
                                 <?php
                                 $query = "SELECT * FROM cursos";
@@ -119,12 +119,12 @@ require_once('funcoes_uteis.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12 ">
-                            <input  id="telefone_fixo" type="text" class="validate" name="telefone_fixo" >
+                            <input  id="telefone_fixo" type="text" class="validate" name="telefone_fixo" required >
                             <label for="telefone_fixo">Telefone Fixo</label>
                         </div>
 
                         <div class="input-field col l6 m6 s12 ">
-                            <input  id="celular" type="text" class="validate" name="celular" >
+                            <input  id="celular" type="text" class="validate" name="celular" required>
                             <label for="celular">Celular</label>
                         </div>
 
@@ -162,7 +162,7 @@ require_once('funcoes_uteis.php');
                         <p>Forma de ingresso </p>
 
                         <p>
-                            <input name="forma_ingresso" type="radio" id="cotista" value="1" />
+                            <input name="forma_ingresso" type="radio" id="cotista" value="1" required />
                             <label for="cotista">Cotista</label>
 
                         </p>

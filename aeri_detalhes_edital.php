@@ -86,78 +86,78 @@ $res = mysqli_fetch_assoc($resultado);
                     <div class="collapsible-header"><i class="material-icons">event_note</i>Cronograma</div>
                     <div class="collapsible-body">
 
-                        <p>Prazo de inscrição: <span style="color: orange"> <?php echo date('d/m/Y', strtotime($res['inicio_inscricao'])) . " a " . date('d/m/Y', strtotime($res['fim_inscricao']));?> </span></p>
+                        <p>Prazo de inscrição: <span style="color: orange"> <?php echo formatar_data($res['inicio_inscricao']) . " a " . formatar_data($res['fim_inscricao']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Homologação das inscrições: <span style="color: orange"> <?php echo($res['homologacao_inscricoes']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Prazo para recurso da inscrição: <span style="color: orange"> <?php echo("de " . $res['inicio_recurso_inscricao'] . " a " . $res['fim_recurso_inscricao']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Divulgação Final da Homologação após período de recurso: <span style="color: orange"> <?php echo($res['homologacao_final']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Realização da Avaliação de Proficiência: <span style="color: orange"> <?php echo("de " . $res['inicio_proficiencia'] . " a " . $res['fim_proficiencia']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Divulgação do resultado dos alunos aprovados na 1ª fase: <span style="color: orange"> <?php echo($res['aprovados_primeira_fase']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Prazo para recurso: <span style="color: orange"> <?php echo("de " . $res['inicio_recurso_primeira_fase'] . " a " . $res['fim_recurso_primeira_fase']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Divulgação do Resultado Final da 1ª fase após período de recurso: <span style="color: orange"> <?php echo($res['resultado_final_primeira_fase']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Avaliação e Classificação dos candidatos pela CCInt: <span style="color: orange"> <?php echo("de " . $res['inicio_classificacao'] . " a " . $res['fim_classificacao']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Resultado da 2ª fase por ordem de classificação: <span style="color: orange"> <?php echo($res['resultado_segunda_fase']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Prazo para recurso: <span style="color: orange"> <?php echo("de " . $res['inicio_recurso_segunda_fase'] . " a " . $res['fim_recurso_segunda_fase']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Divulgação Final do Resultado da 2ª fase após período de recurso: <span style="color: orange"> <?php echo($res['resultado_final_segunda_fase']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Reunião de Esclarecimentos e orientações: <span style="color: orange"> <?php echo($res['reuniao_esclarecimentos']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Prazo para entrega dos Formulários de Candidaturas: <span style="color: orange"> <?php echo("de " . $res['inicio_entrega_documentos'] . " a " . $res['fim__entrega_documentos']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Avaliação de documentos: <span style="color: orange"> <?php echo("de " . $res['inicio_avaliacao_documentos'] . " a " . $res['fim_avaliacao_documentos']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Envio das Candidaturas por Correio: <span style="color: orange"> <?php echo($res['envio_candidaturas_correio']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Tempo para apresentação e recepção das cartas de aceite das IES de acolhimento: <span style="color: orange"> <?php echo("de " . $res['inicio_recepcao_carta'] . " a " . $res['fim_recepcao_carta']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Divulgação dos resultados da 3ª fase: <span style="color: orange"> <?php echo($res['divulgacao_resultado_terceira_fase']); ?> </span></p>
 
                         <hr>
-                        
+
                         <p>Período para: 1) Aquisição de visto no consulado 2) Passaporte 3) Seguro Saúde 4) Aquisição de Passagens Aéreas 5) Realização de exames médicos: <span style="color: orange"> <?php echo("de " . $res['inicio_aquisicoes'] . " a " . $res['fim_aquisicoes']); ?> </span></p>
 
                     </div>

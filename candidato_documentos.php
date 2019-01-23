@@ -66,8 +66,6 @@ require_once('funcoes_uteis.php');
                         }
                         ?>
 
-
-
                     </tbody>
                 </table>
 
@@ -80,12 +78,8 @@ require_once('funcoes_uteis.php');
 
         <?php
         include("rodape_pagina.php");
+        include("scripts.php");
         ?>
 
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
     </body>
 </html>

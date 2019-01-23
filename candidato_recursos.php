@@ -104,6 +104,7 @@ require_once('funcoes_uteis.php');
                             echo('<td>' . $res['status'] . '</td>');
                             echo('<td><form style="display: inline;" method="post" action="candidato_recurso_detalhes.php" >
                                 <input type="hidden" name="id" value="' . $res['id'] . '"/>
+                                    <input type="hidden" name="edital" value="' . $res['edital'] . '"/>
                          <button class="btn waves-effect waves-light blue-grey " type="submit" name="acompanhar"> Visualizar </button> </form></td></tr>');
                         }
                         ?>

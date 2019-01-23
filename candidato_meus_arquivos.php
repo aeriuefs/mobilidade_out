@@ -7,6 +7,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
 }
 
 require_once('funcoes_uteis.php');
+require_once('funcoes_de_arquivos.php');
 
 $edital = $_POST['edital'];
 ?>
@@ -40,10 +41,10 @@ $edital = $_POST['edital'];
 
                 <div class="row">
 
-                    <b>Anexar novos arquivos</b>
+                    <b class="uppercase red-text">Anexar novos arquivos</b>
                     <br> <br>
 
-                    <form method="post" action="bd_salvar_arquivo.php" enctype="multipart/form-data">
+                    <form method="post" action="bd_candidato_adicionar_arquivo.php" enctype="multipart/form-data">
 
                         <input type="hidden" name="edital" value="<?php echo($edital); ?>"/>
 
@@ -78,35 +79,75 @@ $edital = $_POST['edital'];
                     </form>
 
                     <br> <br>
-                    <b>Arquivos enviados</b>
-
+                    
+                    <b class="uppercase red-text">Documentos da inscrição</b>
+                         
                     <table class="striped">
+
                         <thead>
                             <tr>
                                 <th>Tipo</th>
                                 <th>Nome</th>
                                 <th>Ações</th>
-
                             </tr>
                         </thead>
 
                         <tbody>
 
                             <?php
-                            $caminho_edital = str_replace('/', '-', $edital);
-                            $caminho = 'arquivos/editais/' . $caminho_edital . '/candidatos/' . $_SESSION['matricula'] . '/';
-                            $diretorio = dir($caminho);
-                            while (($arquivo_1 = $diretorio->read()) !== false) {
+                            $caminho = 'arquivos/editais/' . str_replace('/', '-', $edital) . '/candidatos/' . $_SESSION['matricula'] . '/arquivos_inscricao/';
 
-                                if (strrchr($arquivo_1, '.') == '.pdf') {
+                            listagem_arquivos($caminho);
+                            ?>
 
-                                    echo '<tr><td> <img src = "img/icones/pdf.png" width = "30" height = "30" /></td>
-                            <td>' . $arquivo_1 . '</td>
-                            <td> <a href=' . $caminho . $arquivo_1 . ' download="' . $arquivo_1 . '">' . 'Download' . '</a></td></tr>';
-                                }
-                            }
+                        </tbody>
+                    </table>
+                    
+                    <br>
 
-                            $diretorio->close();
+                    <b class="uppercase red-text">Certificados</b>
+
+                    <table class="striped">
+
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Nome</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <?php
+                            $caminho = 'arquivos/editais/' . str_replace('/', '-', $edital) . '/candidatos/' . $_SESSION['matricula'] . '/certificados/';
+
+                            listagem_arquivos($caminho);
+                            ?>
+
+                        </tbody>
+                    </table>
+
+                    <br>
+                    
+                    <b class="uppercase red-text">Outros arquivos</b>
+
+                    <table class="striped">
+
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Nome</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <?php
+                            $caminho = 'arquivos/editais/' . str_replace('/', '-', $edital) . '/candidatos/' . $_SESSION['matricula'] . '/documentos/';
+
+                            listagem_arquivos($caminho);
                             ?>
 
                         </tbody>

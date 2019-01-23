@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
     echo $_SESSION['nome'];
 } else {
     
-    
-    header('location:index.php');
+    echo "<script>alert('Sua matrícula ou senha estão incorretos.');</script>"; 
+    header('refresh: 0; url=index.php');
 }
 ?>

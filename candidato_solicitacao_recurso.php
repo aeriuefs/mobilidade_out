@@ -69,8 +69,8 @@ if (mysqli_num_rows($resultado) != 0) {
                         <b>Informações sobre o recurso</b>
 
                         <div class="row">
-                            <div class="input-field col s12">
-                                <input id="nome_opcao_1" type="text" name="explanacao" class="validate">
+                            <div class="input-field col l12 m12 s12">
+                                <input id="explanacao" type="text" name="explanacao" class="validate" required="required">
                                 <label for="explanacao">Explanação</label>
                             </div>
                         </div>
@@ -78,7 +78,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Arquivo</span>
-                                <input type="file" name="arquivo" accept="application/pdf">
+                                <input type="file" name="arquivo" id="arquivo" accept="application/pdf">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -93,7 +93,7 @@ if (mysqli_num_rows($resultado) != 0) {
                             <p>
 
                                 <input type="checkbox" id="declaracao_1" name="declaracao_1" required="required"/>
-                                <label for="declaracao_1">Declaro que...</label>
+                                <label for="declaracao_1">Declaro que as informações acima prestadas são verdadeiras, e assumo a inteira responsabilidade pelas mesmas.</label>
 
                             </p>
 
@@ -102,8 +102,6 @@ if (mysqli_num_rows($resultado) != 0) {
                         <button class="btn waves-effect waves-light" type="submit" name="enviar">Enviar dados para análise
                             <i class="material-icons right">send</i>
                         </button>
-
-
 
                     </form>
 
@@ -117,34 +115,8 @@ if (mysqli_num_rows($resultado) != 0) {
 
         <?php
         include("rodape_pagina.php");
+        include("scripts.php");
         ?>
-
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
-
-        <script>
-
-            $('.datepicker').pickadate({
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 100, // Creates a dropdown of 15 years to control year,
-                today: 'Hoje',
-                clear: 'Limpar',
-                close: 'Ok',
-                closeOnSelect: false // Close upon selecting a date,
-            });
-
-        </script>
-
-        <script>
-
-            $(document).ready(function () {
-                $('select').material_select();
-            });
-
-        </script>
 
     </body>
 </html>

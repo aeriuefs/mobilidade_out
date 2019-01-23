@@ -79,7 +79,7 @@ if (upload_arquivo($_FILES['arquivo']['tmp_name'], $destino)) {
             . ",'" . $reuniao_esclarecimentos . "','" . $inicio_entrega_documentos . "','" . $fim__entrega_documentos . "','" . $inicio_avaliacao_documentos . "','" . $fim_avaliacao_documentos . "','" . $envio_candidaturas_correio . "','" . $inicio_recepcao_carta . "','" . $fim_recepcao_carta . "','" . $divulgacao_resultado_terceira_fase . "','" . $inicio_aquisicoes . "','" . $fim_aquisicoes . "')";
 
     conecta_insere($query);
-    
+
     $recurso = "INSERT INTO recursos(edital, data_inicio, data_fim, codigo_referencia) VALUES ('" . $novo_numero_edital . "','" . $inicio_recurso_inscricao . "','" . $fim_recurso_inscricao . "','" . '3' . "')";
     conecta_insere($recurso);
 
@@ -88,11 +88,9 @@ if (upload_arquivo($_FILES['arquivo']['tmp_name'], $destino)) {
 
     $recurso = "INSERT INTO recursos(edital, data_inicio, data_fim, codigo_referencia) VALUES ('" . $novo_numero_edital . "','" . $inicio_recurso_segunda_fase . "','" . $fim_recurso_segunda_fase . "','" . '11' . "')";
     conecta_insere($recurso);
-
-    
 }
 
-echo "<script>alert('Seu pedido foi enviado com sucesso!');</script>";
+echo "<script>alert('o edital foi cadastrado com sucesso!');</script>";
 
 header("refresh: 0; url=aeri_editais.php");
 ?>

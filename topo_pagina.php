@@ -1,5 +1,5 @@
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
         <title>Mobilidade out - Home</title>
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"

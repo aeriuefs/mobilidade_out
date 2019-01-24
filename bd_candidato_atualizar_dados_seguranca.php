@@ -1,14 +1,10 @@
 <?php
 
-session_start();
 require_once('funcoes_uteis.php');
 
-if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) == true)) {
-    unset($_SESSION['matricula']);
-    unset($_SESSION['senha']);
-    header('location:index.php');
-}
+verificar_sessao();
 
+require_once('funcoes_de_arquivos.php');
 
 $senha_atual = $_POST['senha_atual'];
 $senha_nova = $_POST['senha_nova'];

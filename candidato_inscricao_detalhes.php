@@ -1,13 +1,9 @@
 <?php
-session_start();
-
-if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) == true)) {
-    unset($_SESSION['matricula']);
-    unset($_SESSION['senha']);
-    header('location:index.php');
-}
-
 require_once('funcoes_uteis.php');
+
+verificar_sessao();
+
+require_once('funcoes_de_arquivos.php');
 
 $edital = $_POST['edital'];
 ?>
@@ -35,7 +31,7 @@ $edital = $_POST['edital'];
 
             <section class="section container">
 
-                <h4 class="center-align uppercase">Detalhes do Processo de candidatura - Edital <?php echo $edital?></h4>
+                <h4 class="center-align uppercase">Detalhes do Processo de candidatura - Edital <?php echo $edital ?></h4>
 
                 <b> Dados pessoais</b>
 
@@ -65,7 +61,7 @@ $edital = $_POST['edital'];
 
                 <p>Data de nascimento: <span style="color: #737373"> <?php echo($res['data_nascimento']); ?> </span></p>
 
-                <p>Curso: <span style="color: #737373"> <?php echo($res['curso']); ?> </span></p>
+                <p>Curso: <span style="color: #737373"> <?php formatar_data($res['curso']); ?> </span></p>
 
                 <b> Dados Bancários </b> 
 
@@ -108,7 +104,7 @@ $edital = $_POST['edital'];
                     <tbody>
                         <?php
                         $caminho_edital = str_replace('/', '-', $edital);
-                        $caminho = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/arquivos_inscricao/';
+                        $caminho = 'arquivos/editais/' . $caminho_edital . '/candidatos/' . $_SESSION['matricula'] . '/arquivos_inscricao/';
                         $diretorio = dir($caminho);
                         while (($arquivo_1 = $diretorio->read()) !== false) {
 
@@ -134,13 +130,8 @@ $edital = $_POST['edital'];
 
         <?php
         include("rodape_pagina.php");
+        include("scripts.php");
         ?>
 
-
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
     </body>
 </html>

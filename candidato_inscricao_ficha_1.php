@@ -315,34 +315,8 @@ if (mysqli_num_rows($resultado) != 0) {
 
         <?php
         include("rodape_pagina.php");
+        include("scripts.php");
         ?>
-
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
-
-        <script>
-
-            $('.datepicker').pickadate({
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 100, // Creates a dropdown of 15 years to control year,
-                today: 'Hoje',
-                clear: 'Limpar',
-                close: 'Ok',
-                closeOnSelect: false // Close upon selecting a date,
-            });
-
-        </script>
-
-        <script>
-
-            $(document).ready(function () {
-                $('select').material_select();
-            });
-
-        </script>
 
     </body>
 </html>

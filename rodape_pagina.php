@@ -1,4 +1,5 @@
 <footer class="page-footer grey darken-4 white-text">
+    
     <div class="container">
         <div class="row">
             <div class="col s12 m6">
@@ -35,10 +36,12 @@
             </div>
         </div>
     </div>
+    
     <div class="footer-copyright grey darken-2">
         <div class="container">
             © 2019 - Mobilidade Out - AERI - Todos os direitos reservados.<br>
-            <a class="orange-text" href="desenvolvedor.php">Informações do desenvolvedor</a>
+            <a class="blue-text lighten-4" href="desenvolvedor.php">Informações do desenvolvedor</a>
         </div>
     </div>
+    
 </footer>

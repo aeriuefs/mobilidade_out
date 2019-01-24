@@ -1,14 +1,9 @@
 <?php
-session_start();
-if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) == true)) {
-    unset($_SESSION['matricula']);
-    unset($_SESSION['senha']);
-    header('location:index.php');
-}
-
 require_once('funcoes_uteis.php');
+
+verificar_sessao();
+
 require_once('funcoes_de_arquivos.php');
-//require_once('funcoes_banco_de_dados.php');
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +60,7 @@ require_once('funcoes_de_arquivos.php');
                                 echo('<tr><td>' . $res['tipo_intercambio'] . '</td>');
                                 echo('<td>' . $res['numero_edital'] . '</td>');
                                 echo('<td>' . $res['numero_vagas'] . '</td>');
-                                echo('<td>' . date('d/m/Y', strtotime($res['fim_inscricao'])) . '</td>');
+                                echo('<td>' . formatar_data($res['fim_inscricao']) . '</td>');
                                 echo('<td><form style="display: inline;" method="post" action="aeri_arquivos_edital.php" > 
                 <input type="hidden" name="edital" value="' . $res['numero_edital'] . '"/>                 
                 <button class="btn waves-effect waves-light orange darken-4 " type="submit" formtarget="_blank" name="excluir_edital"> Edital</button> 
@@ -87,13 +82,8 @@ require_once('funcoes_de_arquivos.php');
 
         <?php
         include("rodape_pagina.php");
+        include("scripts.php");
         ?>
-
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
     </body>
 
 </html>

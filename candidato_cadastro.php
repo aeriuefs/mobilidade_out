@@ -20,7 +20,7 @@ require_once('funcoes_uteis.php');
         <main>
 
             <?php
-            include("parallax.php");
+            include("parallax_home.php");
             ?>
 
             <section class="section container">

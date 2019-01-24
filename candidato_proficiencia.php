@@ -1,12 +1,9 @@
 <?php
-session_start();
-if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) == true)) {
-    unset($_SESSION['matricula']);
-    unset($_SESSION['senha']);
-    header('location:index.php');
-}
-
 require_once('funcoes_uteis.php');
+
+verificar_sessao();
+
+require_once('funcoes_de_arquivos.php');
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +60,7 @@ require_once('funcoes_uteis.php');
                         while ($res = mysqli_fetch_assoc($resultado)) {
                             echo('<tr><td>' . $res['edital'] . '</td>');
                             echo('<td>' . $res['prova'] . '</td>');
-                            echo('<td>' . date('d/m/Y', strtotime($res['data'])) . '</td>');
+                            echo('<td>' . formatar_data($res['data']) . '</td>');
                             echo('<td>' . $res['local'] . '</td>');
                             echo('<td>' . $res['conceito'] . '</td></tr>');
                         }
@@ -79,13 +76,9 @@ require_once('funcoes_uteis.php');
 
         <?php
         include("rodape_pagina.php");
+        include("scritps.php");
         ?>
 
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
-        <script> $(".button-collapse").sideNav();</script>
     </body>
 
 </html>

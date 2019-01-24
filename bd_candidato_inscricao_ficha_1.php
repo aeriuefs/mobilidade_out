@@ -107,5 +107,5 @@ upload_arquivo($_FILES['foto']['tmp_name'], $destino);
 upload_multiplos_arquivo($_FILES['certificados'], $caminho5);
 
 
-//header("refresh: 0; url=candidato_inscricoes.php");
+header("refresh: 0; url=candidato_inscricoes.php");
 ?>

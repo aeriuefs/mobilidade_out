@@ -7,6 +7,8 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
 }
 
 require_once('funcoes_uteis.php');
+require_once('funcoes_de_arquivos.php');
+//require_once('funcoes_banco_de_dados.php');
 ?>
 
 <!DOCTYPE html>

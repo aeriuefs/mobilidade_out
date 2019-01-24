@@ -45,7 +45,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
         <main>
 
             <?php
-            include("parallax.php");
+            include("parallax_home.php");
             ?>
 
             <section class="section container">
@@ -73,7 +73,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         </div>
 
                         <div class="row">
-                            <button class="btn waves-effect waves-light red lighten-2" type="submit" name="entrar">Entrar
+                            <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="entrar">Entrar
                                 <i class="material-icons right">chevron_right</i>
                             </button>
                         </div>
@@ -91,7 +91,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                                 <div class="card-image">
                                     <img src="img/cadastro.jpg">
                                     <span class="card-title">Cadastro</span>
-                                    <a class="btn-floating halfway-fab waves-effect waves-light red lighten-2" href="candidato_cadastro.php"><i class="material-icons">add</i></a>
+                                    <a class="btn-floating halfway-fab waves-effect waves-light blue lighten-2" href="candidato_cadastro.php"><i class="material-icons">add</i></a>
                                 </div>
                                 <div class="card-content">
                                     <p>Se você é aluno da instituição, possui uma matrícula ativa e tem intenção de fazer a inscrição em um processo de intercâmbio, clique no botão "+" para se cadastar.</p>

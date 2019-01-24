@@ -149,7 +149,7 @@ require_once('funcoes_uteis.php');
                         </div>
 
                         <div class="input-field col l6 m6 s12">
-                            <input id="confirmacao_senha" type="password" name="confirmacao_senha" class="validate" required>
+                            <input id="confirmacao_senha" type="password" name="confirmacao_senha" class="validate" oninput="validaSenha(this)" required>
                             <label for="confirmacao_senha">Confirmar senha</label>
                         </div>
 
@@ -221,6 +221,18 @@ require_once('funcoes_uteis.php');
         include("rodape_pagina.php");
         include("scripts.php");
         ?>
+
+        <script>
+
+            function validaSenha(input) {
+                if (input.value != document.getElementById('senha').value) {
+                    input.setCustomValidity('Repita a senha corretamente');
+                } else {
+                    input.setCustomValidity('');
+                }
+            }
+
+        </script>
 
     </body>
 </html>

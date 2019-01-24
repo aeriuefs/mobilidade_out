@@ -19,8 +19,9 @@ $curso = $_POST["curso"];
 
 $query = "INSERT INTO candidatos(matricula, senha, nome, data_nascimento, telefone, celular, sexo, cpf, rg, orgao_expedidor, email, forma_ingresso, aluno_residente, curso) VALUES ('" . $matricula . "','" . $senha . "','" . $nome . "','" . $data_nascimento . "','" . $telefone . "','" . $celular . "','" . $sexo . "','" . $cpf . "','" . $rg . "','" . $orgao_expedidor . "','" . $email . "','" . $forma_ingresso . "','" . $aluno_residente . "','" . $curso . "')";
 
-if (conecta_insere($query)==FALSE) {
+if (conecta_insere($query)===FALSE) {
     echo "<script>alert('Erro ao tentar realizar cadastro.');</script>";
+    
 } else {
     echo "<script>alert('Seu cadastro foi realizado com sucesso!');</script>";
 }

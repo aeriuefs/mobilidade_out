@@ -5,12 +5,13 @@
             <a href="#" data-activates="mobile-menu" class="button-collapse left"><i class="material-icons">menu</i></a>
 
             <ul id="nav-mobile" class="right hide-on-med-and-down uppercase">
-                
+
                 <li><a href="http://aeri.uefs.br/">Portal AERI</a></li>
                 <li><a href="http://aeri.uefs.br/contato.php#conteudo">Contato</a></li>  
                 <li><a href="candidato_notificacoes.php"><i class="large material-icons">notifications</i></a></li>
-                <li><a href="bd_logout.php"><span class="new badge red lighten-1" data-badge-caption=""><?php echo(strstr($_SESSION['nome'], ' ', true) . ' ( SAIR )') ?></span></a></li>
-                
+                <li><a href="candidato_notificacoes.php">  <?php echo(notificacoes()) ?> </a> </li>
+                <li><a href="bd_logout.php"><span class="new badge indigo lighten-2" data-badge-caption=""><?php echo(strstr($_SESSION['nome'], ' ', true) . ' ( SAIR )') ?></span></a></li>
+
             </ul>
 
             <ul id="mobile-menu" class="side-nav">

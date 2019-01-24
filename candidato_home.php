@@ -5,6 +5,8 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
     unset($_SESSION['senha']);
     header('location:index.php');
 }
+
+include("funcoes_uteis.php");
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +39,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         <div class="card  grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-inscri.jpg">
-                                
+                                <span class="card-title"><strong>Cadastro</strong></span>
                             </div>
 
                             <div class="card-action hoverable">
@@ -49,7 +51,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-editais.png">
-                                
+                                <span class="card-title"><strong>Inscrição</strong></span>
                             </div>
 
                             <div class="card-action hoverable">
@@ -62,7 +64,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-processos.jpeg">
-                                
+                                <span class="card-title"><strong>Processos</strong></span>
                             </div>
 
                             <div class="card-action hoverable">
@@ -79,11 +81,12 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-documentos.jpg">
+                                <span class="card-title"><strong>Documentos</strong></span>
                                 
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="candidato_documentos.php" class="white-text">Documentos</a>
+                                <a href="candidato_documentos.php" class="white-text">Adicionar arquivos</a>
                             </div>
                         </div>
                     </div>
@@ -92,11 +95,11 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-recursos.jpg">
-                                
+                                <span class="card-title"><strong>Recursos</strong></span>
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="candidato_recursos.php" class="white-text">Recurso</a>
+                                <a href="candidato_recursos.php" class="white-text"> Solicitar e acompanhar</a>
                             </div>
                         </div>
                     </div>
@@ -104,12 +107,12 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                     <div class="col s12 m4 uppercase center-align">
                         <div class="card grey darken-1">
                             <div class="card-image">
-                                <img src="img/home-profi.jpg">
-                                
+                                <img src="img/home-profic.jpg">
+                                <span class="card-title"><strong>Proficiência</strong></span>
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="candidato_proficiencia.php" class="white-text">Proficiência</a>
+                                <a href="candidato_proficiencia.php" class="white-text">Provas de idiomas</a>
                             </div>
                         </div>
                     </div>
@@ -123,11 +126,11 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
                         <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/home-ajuda.jpg">
-                                
+                                <span class="card-title"><strong>Ajuda</strong></span>
                             </div>
 
                             <div class="card-action hoverable">
-                                <a href="candidato_ajuda.php" class="white-text">Tópicos de ajuda</a>
+                                <a href="candidato_ajuda.php" class="white-text">Perguntas comuns</a>
                             </div>
                         </div>
                     </div>

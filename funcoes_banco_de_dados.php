@@ -8,11 +8,12 @@ function conexao() {
     $conex = mysqli_connect($host, $usuario, $senha);
     mysqli_select_db($conex, $banco) or die("Não foi possivel conectar ao banco: ");
     mysqli_set_charset($conex, "utf8");
+    return $conex;
 }
 
 function conecta_insere($query) {
 
-    conexao();
+    $conex = conexao();
 
     if (mysqli_query($conex, $query) == FALSE) {
         return FALSE;
@@ -23,7 +24,7 @@ function conecta_insere($query) {
 
 function conecta_seleciona($sql) {
 
-    conexao();
+    $conex = conexao();
 
     $result = mysqli_query($conex, $sql);
 

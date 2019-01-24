@@ -61,14 +61,27 @@ $edital = $_POST['edital'];
                     <div class="row">
                     <div class="col s12 m6">
 
-                        <div class="card brown">
-                            <div class="card-content white-text">
-                                <span class="card-title">' . $res['titulo'] . '</span>
-                                    <span class="new badge red darken-4" data-badge-caption="">' . $res['data'] . '</span>
+                        <div class="card grey darken-4">
+                        
+                        <div class="card-image">
+                            <img src="img/card.jpg">
+                             <span class="card-title">' . formatar_data($res['data']) . '</span>
+                                 
+                        </div>
+                        
+                        <div class="card-content white-text">
+                        
+                            <span class="card-title">' . $res['titulo'] . '</span>
                                         
-                                <p>' . $res['informacao'] . '</p>
-                                    <p style="color:#ffb74d;">' . ($res['cabe_recurso'] == 'S' ? 'Cabe recurso no prazo estipulado no edital.' : '') . '</p>
-                            </div>
+                            <p>' . $res['informacao'] . '</p>
+                                      
+                        </div>
+                        
+                        <div class="card-action">
+                        ' . ($res['cabe_recurso'] == 'S' ? '<a href="candidato_recursos.php">Cabe recurso</a>' : '') . '
+                            <a href="http://aeri.uefs.br/contato.php#conteudo">Contato com a AERI</a>
+                        </div>
+                        
                         </div>
                         
                     </div>

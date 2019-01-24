@@ -35,7 +35,7 @@ $edital = $_POST['edital'];
 
             <section class="section container">
 
-                <h4 class="center-align uppercase">Detalhes do Processo de candidatura</h4>
+                <h4 class="center-align uppercase">Detalhes do Processo de candidatura - Edital <?php echo $edital?></h4>
 
                 <b> Dados pessoais</b>
 

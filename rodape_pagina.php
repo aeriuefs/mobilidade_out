@@ -35,9 +35,10 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright grey darken-1">
+    <div class="footer-copyright grey darken-2">
         <div class="container">
-            Direitos e permissões (Em construção)
+            © 2019 - Mobilidade Out - AERI - Todos os direitos reservados.<br>
+            <a class="orange-text" href="desenvolvedor.php">Informações do desenvolvedor</a>
         </div>
     </div>
 </footer>

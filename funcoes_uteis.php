@@ -1,5 +1,25 @@
 <?php
 
+function verificar_sessao() {
+
+    session_start();
+
+    if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) == true)) {
+        unset($_SESSION['matricula']);
+        unset($_SESSION['senha']);
+        header('location:index.php');
+    }
+}
+
+function notificacoes() {
+
+    $query_n = "SELECT * FROM notificacoes WHERE destinatario='" . $_SESSION['matricula'] . "' AND status='0'";
+
+    $resultado_n = conecta_seleciona($query_n);
+    
+    return mysqli_num_rows($resultado_n);
+}
+
 function conexao() {
     $banco = 'mobilidadeout';
     $usuario = 'root';
@@ -25,7 +45,7 @@ function conecta_insere($query) {
     if (mysqli_query($conex, $query) == FALSE) {
         return FALSE;
     } else {
-       return mysqli_insert_id($conex);
+        return mysqli_insert_id($conex);
     }
 
     mysqli_close($conex);
@@ -72,7 +92,6 @@ function data_no_intervalor($inicio, $fim) {
 function formatar_data($data) {
 
     return date('d/m/Y', strtotime($data));
-    
 }
 
 function download($arquivo) {

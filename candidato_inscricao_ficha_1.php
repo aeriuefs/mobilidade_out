@@ -6,7 +6,7 @@ verificar_sessao();
 require_once('funcoes_de_arquivos.php');
 //require_once('funcoes_banco_de_dados.php');
 
-$edital = $_POST['edital'];
+$edital = isset($_POST['edital']) ? $_POST['edital'] : recurpera_candidato();
 
 $query = "SELECT * FROM candidaturas WHERE matricula='" . $_SESSION['matricula'] . "' AND edital='" . $edital . "'";
 $resultado = conecta_seleciona($query);
@@ -55,7 +55,7 @@ if (mysqli_num_rows($resultado) != 0) {
 
                         <input type="hidden" name="edital" value="<?php echo($edital); ?>"/>
 
-                        <b>Primeira opção de universidade:</b>
+                        <b class="orange-text">Primeira opção de universidade:</b>
 
                         <div class="row">
                             <div class="input-field col s12">
@@ -79,7 +79,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Plano de trabalho</span>
                                 <input type="file" name="plano_trabalho_opcao_1" accept="application/pdf" required>
                             </div>
@@ -89,7 +89,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Plano de estudo</span>
                                 <input type="file" name="plano_estudo_opcao_1" accept="application/pdf" required>
                             </div>
@@ -99,7 +99,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
 
-                        <b>Segunda opção de universidade:</b>
+                        <b class="orange-text">Segunda opção de universidade:</b>
 
                         <div class="row">
                             <div class="input-field col s12">
@@ -123,7 +123,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Plano de trabalho</span>
                                 <input type="file" name="plano_trabalho_opcao_2" accept="application/pdf" required>
                             </div>
@@ -133,7 +133,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Plano de estudo</span>
                                 <input type="file" name="plano_estudo_opcao_2" accept="application/pdf" required>
                             </div>
@@ -142,7 +142,7 @@ if (mysqli_num_rows($resultado) != 0) {
                             </div>
                         </div>
 
-                        <b>Terceira opção de universidade:</b>
+                        <b class="orange-text">Terceira opção de universidade:</b>
 
                         <div class="row">
                             <div class="input-field col s12">
@@ -166,7 +166,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Plano de trabalho</span>
                                 <input type="file" name="plano_trabalho_opcao_3" accept="application/pdf" required>
                             </div>
@@ -176,7 +176,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Plano de estudo</span>
                                 <input type="file" name="plano_estudo_opcao_3" accept="application/pdf" required>
                             </div>
@@ -185,10 +185,10 @@ if (mysqli_num_rows($resultado) != 0) {
                             </div>
                         </div>
 
-                        <b>Outros arquivos</b>
+                        <b class="orange-text">Outros arquivos</b>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Currículo Lattes</span>
                                 <input type="file" name="curriculo_lattes" accept="application/pdf" required>
                             </div>
@@ -198,7 +198,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Certificados</span>
                                 <input type="file" name="certificados[]" multiple="multiple" accept="application/pdf">
                             </div>
@@ -208,7 +208,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Guia de matrícula</span>
                                 <input type="file" name="guia_matricula" accept="application/pdf" required>
                             </div>
@@ -218,7 +218,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Histórico escolar</span>
                                 <input type="file" name="historico" accept="application/pdf" required>
                             </div>
@@ -228,7 +228,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Comprovante de porcentagem cumprida</span>
                                 <input type="file" name="porcentagem" accept="application/pdf" required>
                             </div>
@@ -238,7 +238,7 @@ if (mysqli_num_rows($resultado) != 0) {
                         </div>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Foto 3x4</span>
                                 <input type="file" name="foto" accept="image/jpg" required>
                             </div>
@@ -247,7 +247,7 @@ if (mysqli_num_rows($resultado) != 0) {
                             </div>
                         </div>
 
-                        <b>Carta de recomendação</b>
+                        <b class="orange-text">Carta de recomendação</b>
 
                         <div class="row">
                             <div class="input-field col s12">
@@ -272,7 +272,7 @@ if (mysqli_num_rows($resultado) != 0) {
                             </div>
                         </div>
 
-                        <b>Declarações</b>
+                        <b class="orange-text">Declarações</b>
 
                         <div class="row">
 
@@ -294,10 +294,12 @@ if (mysqli_num_rows($resultado) != 0) {
                             </p>
 
                         </div>
+                        
+                    
 
                         <div class="row">
 
-                            <button class="btn waves-effect waves-light" type="submit" name="enviar">Enviar dados para análise
+                            <button class="btn waves-effect waves-light indigo lighten-2" type="submit" name="enviar">Enviar dados para análise
                                 <i class="material-icons right">send</i>
                             </button>
 

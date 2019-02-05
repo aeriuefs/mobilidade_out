@@ -34,7 +34,7 @@ require_once('funcoes_de_arquivos.php');
                 <div class="row">
                     <form class="col s12" action="bd_candidato_atualizar_dados_seguranca.php" method="POST">
 
-                        <b>Alterar senha</b>
+                        <b class="orange-text">Alterar senha</b>
                         <div class="row">
 
                             <div class="input-field col l6 m6 s12 ">
@@ -57,7 +57,7 @@ require_once('funcoes_de_arquivos.php');
 
                         <div class="row">
 
-                            <button class="btn waves-effect waves-light" type="submit" name="enviar" >Atualizar Dados 
+                            <button class="btn waves-effect waves-light indigo lighten-2" type="submit" name="enviar" >Atualizar Dados 
                                 <i class="material-icons right">send</i>
                             </button>
 

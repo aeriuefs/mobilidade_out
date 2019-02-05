@@ -33,7 +33,7 @@ require_once('funcoes_de_arquivos.php');
 
                 <div class="row">
                     <div class="col s12 m4 uppercase center-align">
-                        <div class="card blue-grey">
+                        <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/dados_pessoais.jpg">
                                 <span class="card-title"><strong>Cadastro</strong></span>
@@ -49,7 +49,7 @@ require_once('funcoes_de_arquivos.php');
 
                     <div class="col s12 m4 uppercase center-align">
                         
-                        <div class="card blue-grey">
+                        <div class="card grey darken-1">
                             
                             <div class="card-image">
                                 <img src="img/finalizacao.jpg">
@@ -67,7 +67,7 @@ require_once('funcoes_de_arquivos.php');
                     </div>
 
                     <div class="col s12 m4 uppercase center-align">
-                        <div class="card blue-grey">
+                        <div class="card grey darken-1">
                             <div class="card-image">
                                 <img src="img/dados_senha.jpeg">
                                 <span class="card-title"><strong>Segurança</strong></span>

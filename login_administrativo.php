@@ -18,7 +18,7 @@
         <main>
 
             <?php
-            include("parallax.php");
+            include("parallax_home.php");
             ?>
 
             <section class="section container">
@@ -44,13 +44,9 @@
                         </div>
 
                         <div class="row">
-                            <button class="btn waves-effect waves-light blue-grey " type="submit" name="action">Entrar
+                            <button class="btn waves-effect waves-light blue lighten-2 " type="submit" name="action">Entrar
                                 <i class="material-icons right">chevron_right</i>
                             </button>
-                        </div>
-
-                        <div class="row">
-                            <a href="candidato_recuperar_senha.php">Esqueci minha senha</a>
                         </div>
 
                     </form>
@@ -64,7 +60,7 @@
                             </div>
                             <div class="card-content">
                                 <p>O login administrativo é direcionado a servidores da AERI e outros cooperadores. Se você é um estudante,
-                                    volte para o início e efetue login/cadastro no sistema clicando no link apropriado abaixo. Se você é um servidor com problemas de acesso entre em contato conosco clicando no link apropriado abaixo.</p>
+                                    volte para o início e efetue login/cadastro no sistema clicando no link "Sou estudante". Se você é um servidor com problemas de acesso entre em contato conosco clicando no link "Sou servidor com problemas".</p>
                             </div>
                             <div class="card-action">
                                 <a href="index.php">Sou estudante</a>

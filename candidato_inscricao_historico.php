@@ -5,7 +5,7 @@ verificar_sessao();
 
 require_once('funcoes_de_arquivos.php');
 
-$edital = $_POST['edital'];
+$edital = isset($_POST['edital']) ? $_POST['edital'] : recurpera_candidato();
 ?>
 
 <!DOCTYPE html>

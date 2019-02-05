@@ -21,7 +21,7 @@ function notificacoes() {
 }
 
 function conexao() {
-    $banco = 'mobilidadeout';
+    $banco = 'mobilidadeout2';
     $usuario = 'root';
     $senha = '';
     $host = 'localhost';
@@ -32,7 +32,7 @@ function conexao() {
 
 function conecta_insere($query) {
 
-    $banco = 'mobilidadeout';
+    $banco = 'mobilidadeout2';
     $usuario = 'root';
     $senha = '';
     $host = 'localhost';
@@ -53,7 +53,7 @@ function conecta_insere($query) {
 
 function conecta_seleciona($sql) {
 
-    $banco = 'mobilidadeout';
+    $banco = 'mobilidadeout2';
     $usuario = 'root';
     $senha = '';
     $host = 'localhost';
@@ -92,6 +92,11 @@ function data_no_intervalor($inicio, $fim) {
 function formatar_data($data) {
 
     return date('d/m/Y', strtotime($data));
+}
+
+function recurpera_candidato() {
+
+    header("refresh: 0; url=candidato_home.php");
 }
 
 function download($arquivo) {

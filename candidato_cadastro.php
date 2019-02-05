@@ -29,7 +29,7 @@ require_once('funcoes_uteis.php');
 
                 <form class="col s12" action="bd_candidato_cadastro.php" method="POST">
 
-                    <b class="red-text">Dados Pessoais</b>
+                    <b class="orange-text">Dados Pessoais</b>
 
                     <div class="row">
 
@@ -114,7 +114,7 @@ require_once('funcoes_uteis.php');
 
                     </div>
 
-                    <b class="red-text">Contato</b>
+                    <b class="orange-text">Contato</b>
 
                     <div class="row">
 
@@ -139,7 +139,7 @@ require_once('funcoes_uteis.php');
 
                     </div>
 
-                    <b class="red-text">Segurança</b>
+                    <b class="orange-text">Segurança</b>
 
                     <div class="row">
 
@@ -155,7 +155,7 @@ require_once('funcoes_uteis.php');
 
                     </div>
 
-                    <b class="red-text">Pesquisa de indicadores socioeconômicos</b>
+                    <b class="orange-text">Pesquisa de indicadores socioeconômicos</b>
 
                     <div class="row">
 
@@ -206,7 +206,7 @@ require_once('funcoes_uteis.php');
 
                     <div class="row">
 
-                        <button class="btn waves-effect waves-light grey darken-1 " type="submit" name="Cadastrar">Finalizar Cadastro
+                        <button class="btn waves-effect waves-light indigo lighten-2 " type="submit" name="Cadastrar">Finalizar Cadastro
                         </button>
 
                     </div>

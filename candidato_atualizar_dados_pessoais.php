@@ -205,7 +205,7 @@ require_once('funcoes_de_arquivos.php');
 
                     <div class="row">
 
-                        <button class="btn waves-effect waves-light blue-grey " type="submit" name="Cadastrar">Atualizar Cadastro
+                        <button class="btn waves-effect waves-light indigo lighten-2 " type="submit" name="Cadastrar">Atualizar Cadastro
                         </button>
 
                     </div>

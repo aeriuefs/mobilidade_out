@@ -51,7 +51,7 @@ require_once('funcoes_de_arquivos.php');
                                 <td> <img src="img/icones/ajuda.ico"  width="30" height="30" /></td>
                                 <td>Como realizar a inscrição em um edital?</td>
                                 <td>
-                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Visualizar ajuda</a>
+                                    <a class="waves-effect waves-light btn modal-trigger yellow darken-4" href="#modal1">Visualizar ajuda</a>
 
                                     <!-- Modal Structure -->
                                     <div id="modal1" class="modal">
@@ -73,7 +73,7 @@ require_once('funcoes_de_arquivos.php');
                                 <td> <img src="img/icones/ajuda.ico"  width="30" height="30" /></td>
                                 <td>Como posso alterar meus dados pessoais?</td>
                                 <td>
-                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Visualizar ajuda</a>
+                                    <a class="waves-effect waves-light btn modal-trigger yellow darken-4" href="#modal2">Visualizar ajuda</a>
 
                                     <!-- Modal Structure -->
                                     <div id="modal2" class="modal">
@@ -93,7 +93,7 @@ require_once('funcoes_de_arquivos.php');
                                 <td> <img src="img/icones/ajuda.ico"  width="30" height="30" /></td>
                                 <td>Como posso anexar novos documentos?</td>
                                 <td>
-                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal3">Visualizar ajuda</a>
+                                    <a class="waves-effect waves-light btn modal-trigger yellow darken-4" href="#modal3">Visualizar ajuda</a>
 
                                     <!-- Modal Structure -->
                                     <div id="modal3" class="modal">

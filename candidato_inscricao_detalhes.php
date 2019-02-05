@@ -5,7 +5,7 @@ verificar_sessao();
 
 require_once('funcoes_de_arquivos.php');
 
-$edital = $_POST['edital'];
+$edital = isset($_POST['edital']) ? $_POST['edital'] : recurpera_candidato();
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ $edital = $_POST['edital'];
 
                 <h4 class="center-align uppercase">Detalhes do Processo de candidatura - Edital <?php echo $edital ?></h4>
 
-                <b> Dados pessoais</b>
+                <b class="orange-text"> Dados pessoais</b>
 
                 <?php
                 $query = "SELECT * FROM candidatos WHERE matricula='" . $_SESSION['matricula'] . "'";
@@ -63,7 +63,7 @@ $edital = $_POST['edital'];
 
                 <p>Curso: <span style="color: #737373"> <?php formatar_data($res['curso']); ?> </span></p>
 
-                <b> Dados Bancários </b> 
+                <b class="orange-text"> Dados Bancários </b> 
 
                 <p>Banco: <span style="color: #737373"> <?php echo($res['banco']); ?></span></p>
 
@@ -78,7 +78,7 @@ $edital = $_POST['edital'];
                 $i = 1;
                 while ($lista = mysqli_fetch_assoc($resultado)) {
 
-                    echo ('<b>' . $i . 'ª opção de universidade</b>');
+                    echo ('<b class="orange-text">' . $i . 'ª opção de universidade</b>');
 
                     echo('<p>Nome: <span style="color: #737373"> ' . $lista['nome'] . ' </span></p>');
                     echo('<p>Curso: <span style="color: #737373"> ' . $lista['curso'] . ' </span></p>');
@@ -112,7 +112,7 @@ $edital = $_POST['edital'];
 
                                 echo '<tr><td> <img src = "img/icones/pdf.png" width = "30" height = "30" /></td>
                             <td>' . $arquivo_1 . '</td>
-                            <td> <a href=' . $caminho . $arquivo_1 . ' download="' . $arquivo_1 . '">' . 'Download' . '</a></td></tr>';
+                            <td> <a class="orange-text" href=' . $caminho . $arquivo_1 . ' download="' . $arquivo_1 . '">' . 'Download' . '</a></td></tr>';
                             }
                         }
 

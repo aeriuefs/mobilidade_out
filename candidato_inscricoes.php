@@ -57,10 +57,10 @@ require_once('funcoes_de_arquivos.php');
                         while ($res = mysqli_fetch_assoc($resultado)) {
                             echo('<tr><td>' . $res['edital'] . '</td>');
                             echo('<td><form style="display: inline;" method="post" action="candidato_inscricao_detalhes.php" > <input type="hidden" name="edital" value="' . $res['edital'] . '"/>
-                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light blue-grey " type="submit" name="datalhes"> Detalhes </button> </form></td>');
+                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light indigo lighten-2 " type="submit" name="datalhes"> Detalhes </button> </form></td>');
 
                             echo('<td><form style="display: inline;" method="post" action="candidato_inscricao_historico.php" > <input type="hidden" name="edital" value="' . $res['edital'] . '"/>
-                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light blue-grey " type="submit" name="acompanhar"> Acompanhar</button> </form></td></tr>');
+                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light indigo lighten-2 " type="submit" name="acompanhar"> Acompanhar</button> </form></td></tr>');
                         }
                         ?>
 

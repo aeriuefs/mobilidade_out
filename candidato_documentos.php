@@ -46,7 +46,7 @@ require_once('funcoes_de_arquivos.php');
                     <thead>
                         <tr>
                             <th>Edital</th>
-                            <th>Data</th>
+                            <th>Matrícula</th>
                             <th>Ações</th>
 
                         </tr>
@@ -57,9 +57,9 @@ require_once('funcoes_de_arquivos.php');
                         <?php
                         while ($res = mysqli_fetch_assoc($resultado)) {
                             echo('<tr><td>' . $res['edital'] . '</td>');
-                            echo('<td>2017-12-12</td>');
+                            echo('<td>' . $res['matricula'] . '</td>');
                             echo('<td><form style="display: inline;" method="post" action="candidato_meus_arquivos.php" > <input type="hidden" name="edital" value="' . $res['edital'] . '"/>
-                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light blue-grey " type="submit" name="acompanhar"> Meus arquivos</button> </form></td></tr>');
+                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light indigo lighten-2" type="submit" name="acompanhar"> Meus arquivos</button> </form></td></tr>');
                         }
                         ?>
 

@@ -33,7 +33,7 @@ require_once('funcoes_de_arquivos.php');
 
                 <div class="row">
 
-                    <form class="col s12" action="bd_candidato_finalizar_cadastro.php" method="POST">
+                    <form class="col s12" action="bd_candidato_finalizar_cadastro.php" enctype="multipart/form-data" method="POST">
 
                         <?php
                         $query = "SELECT * FROM candidatos WHERE matricula='" . $_SESSION['matricula'] . "'";
@@ -76,38 +76,16 @@ require_once('funcoes_de_arquivos.php');
 
                         <div class="row">
 
-                            <div class="col l12">
-                                <b>Comprovante de dados bancários</b>
-                                <div class="file-field input-field">
-                                    <div class="btn">
-                                        <span>Arquivo</span>
-                                        <input type="file" name="arquivo" accept="application/pdf">
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text">
-                                    </div>
-                                </div>
-
-                                <b>Comprovante de passaporte</b>
-                                <div class="file-field input-field">
-                                    <div class="btn">
-                                        <span>Arquivo</span>
-                                        <input type="file" name="arquivo" accept="application/pdf">
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text">
-                                    </div>
-                                </div> 
-                            </div> 
-
-
-
+                            <p>Após atualizar as informações, você será redirecionado para a página de documentos.
+                            Nesta página você deve acessar o edital escolhido e fazer o upload do comprovante da conta
+                            bancária e do passaporte. Os arquivos devem estar no <b>formato PDF</b>.</p>
+                            
                         </div>
 
 
                         <div class="row">
 
-                            <button class="btn waves-effect waves-light" type="submit" name="enviar">Atualizar Dados
+                            <button class="btn waves-effect waves-light indigo lighten-2" type="submit" name="enviar">Atualizar Dados
                                 <i class="material-icons right">send</i>
                             </button>
 

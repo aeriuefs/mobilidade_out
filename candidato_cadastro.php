@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 ?>
 <html lang="pt-br">
@@ -26,6 +27,8 @@ require_once('funcoes_uteis.php');
             <section class="section container">
 
                 <h4 class="center-align uppercase">Cadastro de Candidato</h4>
+                
+                <p>Nesta sessão vocês devem informar alguns dados pessoais para cadastro. Nos dados numéricos como CPF e telefone, <b>utilize apenas números</b>. </p>
 
                 <form class="col s12" action="bd_candidato_cadastro.php" method="POST">
 
@@ -34,13 +37,13 @@ require_once('funcoes_uteis.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12">
-                            <input  id="nome" type="text" name="nome" class="validate" required pattern="[a-zA-ZÀ-ú\s]+">
+                            <input  id="nome" type="text" placeholder="Seu nome completo" name="nome" class="validate" required pattern="[a-zA-ZÀ-ú\s]+">
                             <label for="nome">Nome Completo</label>
                         </div>
 
                         <div class="input-field col l6 m6 s12">
 
-                            <SELECT NAME = "sexo" SIZE=1>
+                            <SELECT NAME = "sexo" SIZE=1 required>
 
                                 <option disabled selected>Selecione seu sexo</option>
                                 <option value="Feminino">Feminino</option>
@@ -55,7 +58,7 @@ require_once('funcoes_uteis.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12">
-                            <input  id="matricula" type="number" name="matricula" class="validate" required>
+                            <input  id="matricula" type="number" name="matricula" class="validate" required >
                             <label for="matricula">Matrícula</label>
                         </div>
 
@@ -69,12 +72,12 @@ require_once('funcoes_uteis.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12 ">
-                            <input  id="rg" type="number" name="rg" class="validate" required>
+                            <input  id="rg" type="number" name="rg" class="validate" placeholder="Somente números"required>
                             <label for="rg">Registro geral (RG)</label>
                         </div>
 
                         <div class="input-field col l6 m6 s12">
-                            <input  id="orgao_expedidor" type="text" name="orgao_expedidor" class="validate" required>
+                            <input  id="orgao_expedidor" type="text" name="orgao_expedidor" class="validate" placeholder="Exemplo: SSP" required>
                             <label for="orgao_expedidor">Orgão expedidor</label>
                         </div>
 
@@ -119,12 +122,12 @@ require_once('funcoes_uteis.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12 ">
-                            <input  id="telefone_fixo" type="text" class="validate" name="telefone_fixo" required >
+                            <input  id="telefone_fixo" type="number" class="validate" name="telefone_fixo">
                             <label for="telefone_fixo">Telefone Fixo</label>
                         </div>
 
                         <div class="input-field col l6 m6 s12 ">
-                            <input  id="celular" type="text" class="validate" name="celular" required>
+                            <input  id="celular" type="number" class="validate" name="celular" required>
                             <label for="celular">Celular</label>
                         </div>
 
@@ -144,12 +147,12 @@ require_once('funcoes_uteis.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12">
-                            <input id="senha" type="password" name="senha" class="validate" required>
+                            <input id="senha" type="password" name="senha" class="validate" placeholder="Apenas letras e números." pattern="^\w+$" required>
                             <label for="senha">Senha</label>
                         </div>
 
                         <div class="input-field col l6 m6 s12">
-                            <input id="confirmacao_senha" type="password" name="confirmacao_senha" class="validate" oninput="validaSenha(this)" required>
+                            <input id="confirmacao_senha" type="password" pattern="^\w+$" name="confirmacao_senha" class="validate" oninput="validaSenha(this)" required>
                             <label for="confirmacao_senha">Confirmar senha</label>
                         </div>
 

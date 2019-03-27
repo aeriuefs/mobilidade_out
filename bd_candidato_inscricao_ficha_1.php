@@ -1,5 +1,6 @@
 <?php
 
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
@@ -47,18 +48,22 @@ conecta_insere($query6);
 
 $data_atual = date('Y-m-d');
 
-$query7 = "INSERT INTO historico_candidatos(matricula, edital, data) VALUES ('" . $_SESSION['matricula'] . "','" . $edital. "','" . $data_atual . "')";
+$query7 = "INSERT INTO historico_candidatos(matricula, edital, data) VALUES ('" . $_SESSION['matricula'] . "','" . $edital . "','" . $data_atual . "')";
 
 conecta_insere($query7);
+
+$query8 = "INSERT INTO notificacoes(destinatario, remetente, mensagem, status, data) VALUES ('00000000','" . $_SESSION['matricula'] . "','Nova candidatura no edital " . $edital . ". ','0','" . $data_atual . "')";
+
+conecta_insere($query8);
 
 //echo "<script>alert('Sua candidatura foi realizada com sucesso!');</script>";
 
 $caminho_edital = str_replace('/', '-', $edital);
-$caminho1 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/';
-$caminho2 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/arquivos_inscricao/';
-$caminho3 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/documentos/';
-$caminho4 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/recurso/';
-$caminho5 = 'arquivos/editais/' . $caminho_edital. '/candidatos/' . $_SESSION['matricula'] . '/certificados/';
+$caminho1 = __DIR__ .DIRECTORY_SEPARATOR.'arquivos'.DIRECTORY_SEPARATOR.'editais' .DIRECTORY_SEPARATOR . $caminho_edital . DIRECTORY_SEPARATOR . 'candidatos' .DIRECTORY_SEPARATOR . $_SESSION['matricula'] . DIRECTORY_SEPARATOR;
+$caminho2 = __DIR__ . DIRECTORY_SEPARATOR.'arquivos'.DIRECTORY_SEPARATOR.'editais'  .DIRECTORY_SEPARATOR . $caminho_edital . DIRECTORY_SEPARATOR .'candidatos' .DIRECTORY_SEPARATOR . $_SESSION['matricula'] . DIRECTORY_SEPARATOR . 'arquivos_inscricao' . DIRECTORY_SEPARATOR;
+$caminho3 = __DIR__ . DIRECTORY_SEPARATOR.'arquivos'.DIRECTORY_SEPARATOR.'editais' .DIRECTORY_SEPARATOR . $caminho_edital . DIRECTORY_SEPARATOR .'candidatos' .DIRECTORY_SEPARATOR . $_SESSION['matricula'] . DIRECTORY_SEPARATOR .'documentos' . DIRECTORY_SEPARATOR;
+$caminho4 = __DIR__ . DIRECTORY_SEPARATOR.'arquivos'.DIRECTORY_SEPARATOR.'editais' .DIRECTORY_SEPARATOR . $caminho_edital . DIRECTORY_SEPARATOR .'candidatos'.DIRECTORY_SEPARATOR . $_SESSION['matricula'] . DIRECTORY_SEPARATOR .'recurso' . DIRECTORY_SEPARATOR;
+$caminho5 = __DIR__ . DIRECTORY_SEPARATOR.'arquivos'.DIRECTORY_SEPARATOR.'editais' .DIRECTORY_SEPARATOR . $caminho_edital . DIRECTORY_SEPARATOR . 'candidatos' .DIRECTORY_SEPARATOR . $_SESSION['matricula'] . DIRECTORY_SEPARATOR .'certificados' . DIRECTORY_SEPARATOR;
 criar_diretorio($caminho1);
 criar_diretorio($caminho2);
 criar_diretorio($caminho3);
@@ -66,6 +71,8 @@ criar_diretorio($caminho4);
 criar_diretorio($caminho5);
 
 $destino = $caminho2 . 'plano_trabalho_opcao_1.pdf';
+echo $destino;
+echo $_FILES['plano_trabalho_opcao_1']['tmp_name'];
 upload_arquivo($_FILES['plano_trabalho_opcao_1']['tmp_name'], $destino);
 
 $destino = $caminho2 . 'plano_estudo_opcao_1.pdf';
@@ -99,7 +106,9 @@ $destino = $caminho2 . 'foto.jpg'; //aceitar outras
 upload_arquivo($_FILES['foto']['tmp_name'], $destino);
 
 //Certificados 
+
 upload_multiplos_arquivo($_FILES['certificados'], $caminho5);
+
 
 
 header("refresh: 0; url=candidato_inscricoes.php");

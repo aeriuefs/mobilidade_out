@@ -36,17 +36,27 @@
 
                 <div class="row">
 
-                    <b class="uppercase red-text">Informações do desenvolvedor</b>
+                    <p>Nesta página são listas as pessoas que contribuiram direta ou indiretamente com o desenvolvimento do sistema
+                        Mobilidade Out. Todos os direitos de utilização estão sobre o domínio da Assessoria Especial de Relações Institucinais 
+                        da Universidade Estadual de Feira de Santana - Avenida Transnordestina, s/n - Novo Horizonte, CEP 44036-900 - Feira de Santana - Bahia - Brasil.
+                    </p>
+
+                    <b class="uppercase red-text">Desenvolvedor</b>
 
                     <p>Nome: Júlio César Andrade Silva </p>
                     <p>E-mail: juliocesar.andradee@gmail.com</p>
 
+                    <b class="uppercase red-text">Idealizadora</b>
+                    <p>Eneida Soanne Matos Campos de Oliveira</p>
+
                     <b class="uppercase red-text">Apoio</b>
                     <p>Assessoria Especial de Informática (AEI) - UEFS</p>
+                    <p>Felipe Souza Cordeiro</p>
 
                     <b class="uppercase red-text">Colaboradores</b>
+                    <p>Karla Maria Lima Figueiredo Bené Barbosa</p>
 
-                    <p></p>
+                    <p>Rafaela de Oliveira Silva</p>
 
                     <p></p>
 

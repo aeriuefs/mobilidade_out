@@ -1,4 +1,5 @@
 <?php
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
@@ -38,7 +39,7 @@ $edital = isset($_POST['edital']) ? $_POST['edital'] : recurpera_candidato();
 
                 <div class="row">
 
-                    <b class="uppercase red-text">Anexar novos arquivos</b>
+                    <b class="uppercase orange-text">Anexar novos arquivos</b>
                     <br> <br>
 
                     <form method="post" action="bd_candidato_adicionar_arquivo.php" enctype="multipart/form-data">
@@ -46,7 +47,7 @@ $edital = isset($_POST['edital']) ? $_POST['edital'] : recurpera_candidato();
                         <input type="hidden" name="edital" value="<?php echo($edital); ?>"/>
 
                         <div class="file-field input-field">
-                            <div class="btn">
+                            <div class="btn indigo lighten-2">
                                 <span>Arquivo</span>
                                 <input type="file" name="arquivo" accept="application/pdf">
                             </div>
@@ -71,13 +72,13 @@ $edital = isset($_POST['edital']) ? $_POST['edital'] : recurpera_candidato();
 
                         </SELECT>
 
-                        <button class="btn waves-effect waves-light blue-grey " type="submit" name="enviar">Enviar</button>
+                        <button class="btn waves-effect waves-light indigo lighten-2" type="submit" name="enviar">Enviar</button>
 
                     </form>
 
                     <br> <br>
                     
-                    <b class="uppercase red-text">Documentos da inscrição</b>
+                    <b class="uppercase orange-text">Documentos da inscrição</b>
                          
                     <table class="striped">
 
@@ -102,7 +103,7 @@ $edital = isset($_POST['edital']) ? $_POST['edital'] : recurpera_candidato();
                     
                     <br>
 
-                    <b class="uppercase red-text">Certificados</b>
+                    <b class="uppercase orange-text">Certificados</b>
 
                     <table class="striped">
 
@@ -127,7 +128,7 @@ $edital = isset($_POST['edital']) ? $_POST['edital'] : recurpera_candidato();
 
                     <br>
                     
-                    <b class="uppercase red-text">Outros arquivos</b>
+                    <b class="uppercase orange-text">Outros arquivos</b>
 
                     <table class="striped">
 

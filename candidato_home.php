@@ -1,33 +1,35 @@
 <?php
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
 
 require_once('funcoes_de_arquivos.php');
+
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 
 
-    <?php
-    include("topo_pagina.php");
-    ?>
+<?php
+include("topo_pagina.php");
+?>
 
 
     <body>
 
         <header>
-            <?php
-            include("navbar_candidato.php");
-            ?>
+<?php
+include("navbar_candidato.php");
+?>
         </header>
 
         <main>
 
-            <?php
-            include("parallax.php");
-            ?>
+<?php
+include("parallax.php");
+?>
 
             <section class="section container">
 
@@ -140,10 +142,10 @@ require_once('funcoes_de_arquivos.php');
 
         </main>
 
-        <?php
-        include("rodape_pagina.php");
-        include("scripts.php");
-        ?>
+<?php
+include("rodape_pagina.php");
+include("scripts.php");
+?>
 
     </body>
 </html>

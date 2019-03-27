@@ -1,5 +1,6 @@
 <?php
 
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
@@ -13,8 +14,8 @@ $rg = $_POST['rg'];
 $orgao_expedidor = $_POST['orgao_expedidor'];
 $sexo = $_POST['sexo'];
 $data_nascimento = $_POST['data_nascimento'];
-$telefone = isset($_POST["telefone"]) ? $_POST["telefone"] : "NULL";
-$celular = isset($_POST["celular"]) ? $_POST["celular"] : "NULL";
+$telefone = isset($_POST["telefone_fixo"]) ? $_POST["telefone_fixo"] : "0";
+$celular = isset($_POST["celular"]) ? $_POST["celular"] : "0";
 $forma_ingresso = isset($_POST["forma_ingresso"]) ? $_POST["forma_ingresso"] : "0";
 $aluno_residente = isset($_POST["aluno_residente"]) ? $_POST["aluno_residente"] : "0";
 $curso = $_POST["curso"];

@@ -1,4 +1,5 @@
 <?php
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
@@ -51,7 +52,7 @@ if (mysqli_num_rows($resultado) != 0) {
                 </p>
 
                 <div class="row">
-                    <form class="col s12" action="bd_candidato_inscricao_ficha_1.php" enctype="multipart/form-data" method="post">
+                    <form class="col s12" action="bd_candidato_inscricao_ficha_1.php" enctype="multipart/form-data"  method="POST" >
 
                         <input type="hidden" name="edital" value="<?php echo($edital); ?>"/>
 
@@ -263,7 +264,7 @@ if (mysqli_num_rows($resultado) != 0) {
                             </div>
                         </div>
 
-                        <!--//Colocar os departamentos num lista aqui-->
+                        
 
                         <div class="row">
                             <div class="input-field col s12">

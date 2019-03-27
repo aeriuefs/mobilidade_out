@@ -7,6 +7,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
 }
 
 $edital = $_POST['edital'];
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 ?>
 <!DOCTYPE html>

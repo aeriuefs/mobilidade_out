@@ -1,4 +1,5 @@
 <?php
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
@@ -38,18 +39,18 @@ require_once('funcoes_de_arquivos.php');
                         <div class="row">
 
                             <div class="input-field col l6 m6 s12 ">
-                                <input  id="banco" type="password" class="validate" name="senha_atual">
-                                <label for="banco">Senha atual</label>
+                                <input  id="senha_atual" type="password" class="validate" name="senha_atual" required>
+                                <label for="senha_atual">Senha atual</label>
                             </div>
 
                             <div class="input-field col l6 m6 s12">
-                                <input  id="agencia" type="password" class="validate" name="senha_nova" id="senha_nova">
-                                <label for="agencia">Senha nova</label>
+                                <input  id="senha" type="password" class="validate" name="senha" id="senha" required>
+                                <label for="senha">Senha nova</label>
                             </div>
 
                             <div class="input-field col l6 m6 s12">
-                                <input  id="conta" type="password" class="validate" name="confirmar_senha" id="confirmar_senha">
-                                <label for="conta">Confirmar nova senha</label>
+                                <input  id="confirmar_senha" type="password" class="validate" name="confirmar_senha" id="confirmar_senha" oninput="validaSenha(this)" required>
+                                <label for="confirmar_senha">Confirmar nova senha</label>
                             </div>
 
                         </div>
@@ -77,6 +78,17 @@ require_once('funcoes_de_arquivos.php');
         include("rodape_pagina.php");
         include("scripts.php");
         ?>
+        <script>
+
+    function validaSenha(input) {
+        if (input.value != document.getElementById('senha').value) {
+            input.setCustomValidity('Repita a senha corretamente');
+        } else {
+            input.setCustomValidity('');
+        }
+    }
+
+</script>
 
 
     </body>

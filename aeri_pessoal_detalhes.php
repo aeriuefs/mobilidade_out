@@ -6,6 +6,7 @@ if ((!isset($_SESSION['matricula']) == true) and ( !isset($_SESSION['senha']) ==
     header('location:index.php');
 }
 
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 

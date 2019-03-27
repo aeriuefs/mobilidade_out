@@ -2,7 +2,9 @@
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 
-<script> $(".button-collapse").sideNav();</script>
+<script>
+    $(".button-collapse").sideNav();
+</script>
 
 <script>
 
@@ -26,3 +28,4 @@
     $('.fixed-action-btn.toolbar').openToolbar();
     $('.fixed-action-btn.toolbar').closeToolbar();
 </script>    
+

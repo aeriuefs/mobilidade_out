@@ -1,4 +1,5 @@
 <?php
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
@@ -56,12 +57,14 @@ $edital = isset($_POST['edital']) ? $_POST['edital'] : recurpera_candidato();
                 <p>Sexo: <span style="color: #737373"> <?php echo($res['sexo']); ?> </span></p>
 
                 <p>Telefone: <span style="color: #737373"> <?php echo($res['telefone']); ?></span></p>
+                
+                <p>Telefone: <span style="color: #737373"> <?php echo($res['celular']); ?></span></p>
 
                 <p>Passaporte: <span style="color: #737373"> <?php echo($res['passaporte']); ?> </span></p>
 
-                <p>Data de nascimento: <span style="color: #737373"> <?php echo($res['data_nascimento']); ?> </span></p>
+                <p>Data de nascimento: <span style="color: #737373"> <?php formatar_data($res['data_nascimento']); ?> </span></p>
 
-                <p>Curso: <span style="color: #737373"> <?php formatar_data($res['curso']); ?> </span></p>
+                <p>Curso: <span style="color: #737373"> <?php echo($res['curso']); ?> </span></p>
 
                 <b class="orange-text"> Dados Bancários </b> 
 

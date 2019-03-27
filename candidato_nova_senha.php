@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 ?>
 <html lang="pt-br">

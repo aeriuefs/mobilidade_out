@@ -1,4 +1,5 @@
 <?php
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
@@ -70,7 +71,7 @@ require_once('funcoes_de_arquivos.php');
                 <button class="btn waves-effect waves-light yellow darken-4" type="submit" formtarget="_blank" name="baixar_edital"> Download</button> 
             </form></td>');
                                 echo('<td><form style="display: inline;" method="post" action="candidato_inscricao_ficha_' . $res['codigo'] . '.php" > <input type="hidden" name="edital" value="' . $res['numero_edital'] . '"/>
-                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light indigo lighten-2 " type="submit" name="inscrever"> Inscrever </button> </form>'
+                        <input type="hidden" name="matricula" value="' . $_SESSION['matricula'] . '"/> <button class="btn waves-effect waves-light indigo lighten-2" type="submit" name="inscrever"> Inscrever </button> </form>'
                                 . '</td></tr>');
                             }
                         }

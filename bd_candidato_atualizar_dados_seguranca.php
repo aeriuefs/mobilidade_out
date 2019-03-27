@@ -1,13 +1,12 @@
 <?php
 
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
 
-require_once('funcoes_de_arquivos.php');
-
 $senha_atual = $_POST['senha_atual'];
-$senha_nova = $_POST['senha_nova'];
+$senha_nova = $_POST['senha'];
 $confirmar_senha = $_POST['confirmar_senha'];
 
 if ($senha_atual == $_SESSION['senha']) {

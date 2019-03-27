@@ -1,6 +1,7 @@
 <?php
 
 require_once('sessao_aeri.php');
+require_once('funcoes_banco_de_dados.php');
 require_once ('funcoes_de_arquivos.php');
 
 $numero_edital = $_POST['numero_edital'];

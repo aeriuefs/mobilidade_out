@@ -25,9 +25,9 @@
                 <h4 class="center-align uppercase">Recuperação de senha de acesso</h4>
 
                 <p>Olá. Esta sessão foi criada para que os úsuários cadastrados no sistema possam recuperar sua senha de acesso. Por favor, preencha o formulário abaixo
-                    e em breve enviaremos sua senha por e-mail. </p>
+                    para poder redefinir sua senha./p>
 
-                <form class="col s12" action="" method="POST">
+                <form class="col s12" action="candidato_redefinir_senha.php" method="POST">
                     
                     <div class="row">
 

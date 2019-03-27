@@ -3,6 +3,7 @@
 session_start();
 
 require_once('funcoes_uteis.php');
+require_once('funcoes_banco_de_dados.php');
 
 $matricula = $_POST['matricula'];
 $senha = $_POST['senha'];

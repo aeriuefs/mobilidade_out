@@ -1,4 +1,5 @@
 <?php
+require_once('funcoes_banco_de_dados.php');
 require_once('funcoes_uteis.php');
 
 verificar_sessao();
@@ -45,7 +46,7 @@ require_once('funcoes_de_arquivos.php');
                     <div class="row">
 
                         <div class="input-field col l6 m6 s12">
-                            <input  id="nome" type="text" name="nome" class="validate" required value="<?php echo($res['nome']); ?>" pattern="[a-zA-Z\s]+">
+                            <input  id="nome" type="text" name="nome" class="validate" required value="<?php echo($res['nome']); ?>" pattern="[a-zA-ZÀ-ú\s]+">
                             <label for="nome">Nome Completo</label>
                         </div>
 

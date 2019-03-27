@@ -5,7 +5,7 @@
             <div class="col s12 m6">
                 <h5>Sobre</h5>
                 <p>
-                    O Mobilidade Out é um novo passo para automatização dos processos da AERI. Estamos empenhados em 
+                    O Mobilidade Out é um novo passo para automatização dos procedimentos da AERI. Estamos empenhados em 
                     oferecer mais comodidade e transparência neste processo que pode ser um marco na sua história. Ficamos felizes
                     em contribuir com o seu futuro!
                 </p>
@@ -40,7 +40,7 @@
     <div class="footer-copyright grey darken-2">
         <div class="container">
             © 2019 - Mobilidade Out - AERI - Todos os direitos reservados.<br>
-            <a class="orange-text lighten-4" href="desenvolvedor.php">Informações do desenvolvedor</a>
+            <a class="blue-text" href="desenvolvedor.php">Informações do desenvolvedor</a>
         </div>
     </div>
     
